@@ -1,0 +1,48 @@
+﻿body {
+	margin: 0;
+	background-color: #111111;
+	color: white;
+	font-family: Arial, sans-serif;
+}
+
+header {
+	padding: 20px, 10%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #181818;
+}
+
+header h1 {
+	margin: 0;
+	font-size: 24px;
+}
+
+nav {
+	display: flex;
+	gap: 30px;
+}
+
+nav a {
+	color: white;
+	text-decoration: none;
+}
+
+nav a:hover {
+	color: #aaaaaa;
+}
+
+main {
+	width: 80%;
+	margin: 0 auto;
+}
+
+section {
+	padding: 30px 0;
+}
+
+.project-card {
+	background-color: #1e1e1e;
+	padding: 20px;
+	border-radius: 10px;
+}

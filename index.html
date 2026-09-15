@@ -3,13 +3,13 @@
 <head>
     <meta charset="utf-8" />
     <meta name= "viewport" content= "width=device-width, initial-scale=1.0">
-    <title>HariTanmaiPortfolio</title>
+		<link rel="stylesheet" href="style.css">
+    <title>Hari's Portfolio | Game Development</title>
 </head>
 
-
+	
 <body>
 <header>
-    <h1>Hari Tanmai | Games Programming & Design Portfolio</h1>
     <nav>
         <a href="#about">About Me</a>
         <a href="#projects">Projects</a>
@@ -19,10 +19,25 @@
 </header>
 
 <main>
-<section id="about">
-    <h2>About Me</h2>
-    <p>Portfolio WIP</p>
+<section id="about" class="profile-section">
+	<img src="images/profile.jpg"
+		 alt="Photo of Hari Tanmai"
+		 class="profile-picture"
+	<div class="profile-info">
+		<h2>Hari Tanmai Gandi</h2>
+		<h3>Games Programming & Design</h3>
+		<p>I'm a masters graduate from University of Staffordshire and my proficiency lies in using C# with Unity, along with decent experience using C++ with Unreal Engine and SFML. Additionally, I'm also familiar with 2D/3D pipelines as I work on concept art in Photoshop and 3D modelling in Maya as a hobby.</p>
+		<div class="skills">
+			<span>C#</span>
+			<span>C++</span>
+			<span>HLSL</span>
+			<span>PCG</span>
+			<span>Gameplay Systems</span>
+			<span>Git Version Control</span>
+		</div>
+	</div>	
 </section>
+	
 <section id="projects">
     <h2>Projects</h2>
     <article class="project-card" data-language="csharp">
@@ -31,15 +46,18 @@
         <p>Unity 6| C# | HLSL | Compute Shaders</p>
     </aritcle>
 </section>
+	
 <section id="awards">
     <h2>Awards</h2>
     <p>Awards will go here.</p>
 </section>
+	
 <section id="contact">
     <h2>Contact Me</h2>
     <p>GitHub</p>
     <p>LinkedIn</p>
 </section>
+	
 </main>
 
 <footer>
@@ -47,4 +65,5 @@
 </footer>
 </body>
 
+	
 </html>
