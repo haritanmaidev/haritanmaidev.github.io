@@ -11,6 +11,9 @@ header {
 	justify-content: space-between;
 	align-items: center;
 	background-color: #181818;
+	position: sticky;
+	top: 0;
+	z-index: 10;
 }
 
 header h1 {
@@ -39,6 +42,7 @@ main {
 
 section {
 	padding: 30px 0;
+	scroll-margin-top: 90px;
 }
 
 .profile-section {
@@ -55,8 +59,68 @@ section {
     flex-shrink: 0;
 }
 
+.profile-info h1 {
+	font-size: 36px;
+	margin: 0 0 16px;
+}
+
+.profile-info p {
+	line-height: 1.6;
+	color: #cccccc;
+}
+
+.skills {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+}
+
+.skills span {
+	background-color:#252525;
+	padding: 6px 12px;
+	border-radius: 6px;
+	font-size: 14px;
+}
+
 .project-card {
 	background-color: #1e1e1e;
-	padding: 20px;
+	padding: 9px;
 	border-radius: 10px;
+	width: 100%;
+	max-width: 500px;
+	box-sizing: border-box;
+}
+
+.project-info {
+	padding: 16px 2px;
+}
+
+.project-info h3 {
+	margin: 0 0 12px;
+}
+
+.project-info p {
+	margin: 0;
+}
+
+.project-image {
+	display: block;
+	width: 100%;
+	aspect-ratio: 16 / 9;
+	object-fit: cover;
+	border-radius: 6px;
+}
+
+@media (max-width: 800px){
+	.profile-section {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.profile-picture {
+		width: 100%;
+		max-width: 450px;
+		height: auto;
+		aspect-ratio: 1;
+	}
 }
