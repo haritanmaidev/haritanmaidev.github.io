@@ -23,3 +23,23 @@ document.addEventListener("keydown", (event) => {
         menuButton.focus();
     }
 });
+
+const filterButtons = document.querySelectorAll(".project-filters button");
+const projectCards = document.querySelectorAll(".project-grid .project-card");
+
+filterButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+        const filter = button.dataset.filter;
+        filterButtons.forEach((otherButton) => {
+            otherButton.setAttribute("aria-pressed", String(otherButton == button));
+        });
+
+    projectCards.forEach((card) => {
+        let matches;
+        if(filter === "all") matches = true;
+        else if(filter == "team") matches = card.dataset.team === "true";
+        else matches = card.dataset.language === filter;
+        card.hidden = !matches;
+    });
+});
+});
