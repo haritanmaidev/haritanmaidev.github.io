@@ -181,11 +181,11 @@ section > h2 {
 }
 
 .project-info {
-	padding: 16px 2px;
+	padding: 16px 2px 2px;
 }
 
 .project-info h3 {
-	margin: 0 0 12px;
+	margin: 0 0 10px;
 }
 
 .project-info p {
@@ -230,15 +230,16 @@ section > h2 {
     flex-wrap: wrap;
     justify-content: center;
     gap: 24px;
-    max-width: 1000px;
+	max-width: 1248px;
     margin: 0 auto;
 }
 
 .award-card {
-    flex: 1 1 300px;
+    flex: 0 1 400px;
+	width: 100%;
     max-width: 400px;
     min-width: 0;
-    padding: 24px;
+    padding: 14px;
     box-sizing: border-box;
     background-color: #1e1e1e;
     border: 1px solid #444444;
@@ -246,12 +247,9 @@ section > h2 {
     text-align: center;
 }
 
-.award-card h3 {
-    margin: 0 0 8px;
-}
-
 .award-card p {
-    margin: 0 0 16px;
+    margin: 0 0 8px;
+	font-weight: bold;
     color: #cccccc;
 }
 
@@ -260,10 +258,28 @@ section > h2 {
 }
 
 .award-card h4 {
-    margin: 0 0 12px;
-    font-size: 14px;
+    margin: 0 0 18px;
+    font-size: 11px;
     font-weight: normal;
+	font-style: italic;
     color: #cccccc;
+}
+
+.award-image {
+	display: block;
+	width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: fill;
+	object-position: center;
+    border-radius: 6px;
+    margin-bottom: 16px;
+}
+
+.award-badges {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 8px;
 }
 
 .award-placement {
@@ -272,15 +288,6 @@ section > h2 {
     background-color: #303030;
     border-radius: 6px;
     font-weight: bold;
-}
-
-.award-image {
-	display: block;
-	width: 100%;
-    aspect-ratio: 16 / 9;
-    object-fit: contain;
-    border-radius: 6px;
-    margin-bottom: 16px;
 }
 
 footer {
