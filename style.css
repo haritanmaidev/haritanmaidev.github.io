@@ -1,7 +1,33 @@
-﻿body {
+﻿:root {
+    /* Backgrounds */
+    --page-bg: #1e3c30;
+    --content-bg: #111111;
+    --navigation-bg: #181818;
+    --card-bg: #1e1e1e;
+    --control-bg: #252525;
+    --badge-bg: #303030;
+
+    /* Text */
+    --text-primary: #ffffff;
+    --text-secondary: #cccccc;
+    --link-hover: #aaaaaa;
+
+    /* Borders and outlines */
+    --border-subtle: #333333;
+    --border-default: #444444;
+    --border-control: #555555;
+    --card-hover-outline: #777777;
+
+    /* Controls that may need separate colors later */
+    --menu-button-bg: var(--badge-bg);
+    --filter-selected-bg: var(--border-default);
+    --filter-selected-border: var(--link-hover);
+}
+
+body {
 	margin: 0;
-	background-color: #111111;
-	color: white;
+	background-color: var(--page-bg);
+	color: var(--text-primary);
 	font-family: Arial, sans-serif;
 }
 
@@ -12,14 +38,14 @@ header {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	background-color: #181818;
+	background-color: var(--navigation-bg);
 	position: sticky;
 	top: 0;
 	z-index: 10;
 }
 
 .site-title {
-	color: white;
+	color: var(--text-primary);
 	text-decoration: none;
 	font-size: 24px;
 	font-weight: bold;
@@ -33,19 +59,19 @@ nav {
 }
 
 nav a {
-	color: white;
+	color: var(--text-primary);
 	text-decoration: none;
 }
 
 nav a:hover {
-	color: #aaaaaa;
+	color: var(--link-hover);
 }
 
 .menu-toggle {
 	display: none;
-	background: #303030;
-	color: white;
-	border: 1px solid #555555;
+	background: var(--menu-button-bg);
+	color: var(--text-primary);
+	border: 1px solid var(--border-control);
 	border-radius: 6px;
 	padding: 10px 16px;
 	font: inherit;
@@ -62,11 +88,14 @@ nav a:hover {
 
 main {
 	width: 80%;
-	margin: 0 auto;
+	padding: 1% 1%;
+	box-sizing: content-box;
+	margin: auto auto;
+	display: flow-root;
+	background-color: var(--content-bg);
 }
 
 section {
-	padding: 30px 0;
 	scroll-margin-top: 90px;
 }
 
@@ -75,17 +104,21 @@ section > h2 {
 	text-align: center;
 }
 
+main > section + section {
+    margin-top: 60px;
+}
+
 .profile-section {
 	display: flex;
 	align-items: center;
-	gap: 30px;
-	padding: 24px;
 	width: 100%;
 	max-width: 1200px;
+	gap: 30px;
+	padding: 24px;
+	margin: 0 auto;
 	box-sizing: border-box;
-	margin: 30px auto;
-	background-color: #1e1e1e;
-	border: 1px solid #333333;
+	background-color: var(--card-bg);
+	border: 1px solid var(--border-subtle);
 	border-radius: 20px;
 }
 
@@ -97,7 +130,7 @@ section > h2 {
     object-fit: cover;
     border-radius: 100px;
     flex-shrink: 0;
-	border: 2px solid #444444;
+	border: 2px solid var(--border-default);
 	box-sizing: border-box;
 }
 
@@ -118,7 +151,7 @@ section > h2 {
 .profile-info p {
 	line-height: 1.6;
 	margin: 8px 0 16px;
-	color: #cccccc;
+	color: var(--text-secondary);
 }
 
 .skills {
@@ -128,7 +161,7 @@ section > h2 {
 }
 
 .skills span {
-	background-color:#252525;
+	background-color:var(--control-bg);
 	padding: 6px 12px;
 	border-radius: 6px;
 	font-size: 14px;
@@ -144,9 +177,9 @@ section > h2 {
 
 .project-filters button {
     padding: 8px 16px;
-    background-color: #252525;
-    color: white;
-    border: 1px solid #555555;
+    background-color: var(--control-bg);
+    color: var(--text-primary);
+    border: 1px solid var(--border-control);
     border-radius: 6px;
     font: inherit;
 	font-size: 12px;
@@ -154,8 +187,8 @@ section > h2 {
 }
 
 .project-filters button[aria-pressed="true"] {
-    background-color: #444444;
-    border-color: #aaaaaa;
+    background-color: var(--filter-selected-bg);
+    border-color: var(--filter-selected-border);
 }
 
 .project-grid {
@@ -168,7 +201,7 @@ section > h2 {
 }
 
 .project-card {
-	background-color: #1e1e1e;
+	background-color: var(--card-bg);
 	padding: 8px;
 	border-radius: 10px;
 	width: 100%;
@@ -219,7 +252,7 @@ section > h2 {
 }
 
 .project-tags span {
-	background-color: #303030;
+	background-color: var(--badge-bg);
 	padding: 4px 8px;
 	border-radius: 6px;
 	font-size: 12px;
@@ -241,8 +274,8 @@ section > h2 {
     min-width: 0;
     padding: 14px;
     box-sizing: border-box;
-    background-color: #1e1e1e;
-    border: 1px solid #444444;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-default);
     border-radius: 10px;
     text-align: center;
 }
@@ -250,7 +283,7 @@ section > h2 {
 .award-card p {
     margin: 0 0 8px;
 	font-weight: bold;
-    color: #cccccc;
+    color: var(--text-secondary);
 }
 
 .award-card h3 {
@@ -262,7 +295,7 @@ section > h2 {
     font-size: 11px;
     font-weight: normal;
 	font-style: italic;
-    color: #cccccc;
+    color: var(--text-secondary);
 }
 
 .award-image {
@@ -285,15 +318,15 @@ section > h2 {
 .award-placement {
     display: inline-block;
     padding: 6px 12px;
-    background-color: #303030;
+    background-color: var(--badge-bg);
     border-radius: 6px;
     font-weight: bold;
 }
 
 footer {
 	padding: 24px 5%;
-	background-color: #181818;
-	border-top: 1px solid #333333;
+	background-color: var(--navigation-bg);
+	border-top: 1px solid var(--border-subtle);
 	text-align: center;
 	scroll-margin-top: 90px;
 }
@@ -303,17 +336,17 @@ footer p{
 }
 
 footer a {
-	color: white;
+	color: var(--text-primary);
 	text-underline-offset: 4px;
 }
 
 footer a:hover{
-	color: #aaaaaa;
+	color: var(--link-hover);
 }
 
 @media (hover: hover) {
     .project-card:hover {
-        outline-color: #777777;
+        outline-color: var(--card-hover-outline);
     }
 }
 
@@ -358,8 +391,8 @@ footer a:hover{
 		gap: 16px;
 		margin: 0;
 		padding: 20px;
-		background: #181818;
-		border: 1px solid #444444;
+		background: var(--navigation-bg);
+		border: 1px solid var(--border-default);
 		border-radius: 8px;
 	}
 
