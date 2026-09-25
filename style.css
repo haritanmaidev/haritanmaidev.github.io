@@ -1,8 +1,8 @@
 ﻿:root {
     /* Backgrounds */
-    --page-bg: #1e3c30;
+    --page-bg: #131c17;
     --content-bg: #111111;
-    --navigation-bg: #181818;
+    --navigation-bg: #1e3c30;
     --card-bg: #1e1e1e;
     --control-bg: #252525;
     --badge-bg: #303030;
@@ -16,7 +16,7 @@
     --border-subtle: #333333;
     --border-default: #444444;
     --border-control: #555555;
-    --card-hover-outline: #777777;
+    --card-hover-outline: #49ab31;
 
     /* Controls that may need separate colors later */
     --menu-button-bg: var(--badge-bg);
@@ -38,7 +38,7 @@ header {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	background-color: var(--navigation-bg);
+	background-color: color-mix(in srgb, var(--navigation-bg) 85%, transparent);
 	position: sticky;
 	top: 0;
 	z-index: 10;
@@ -87,8 +87,8 @@ nav a:hover {
 }
 
 main {
-	width: 80%;
-	padding: 1% 1%;
+	width: 76%;
+	padding: 24px;
 	box-sizing: content-box;
 	margin: auto auto;
 	display: flow-root;
@@ -118,7 +118,7 @@ main > section + section {
 	margin: 0 auto;
 	box-sizing: border-box;
 	background-color: var(--card-bg);
-	border: 1px solid var(--border-subtle);
+	border: 3px solid var(--navigation-bg);
 	border-radius: 20px;
 }
 
@@ -209,7 +209,7 @@ main > section + section {
 	max-width: 500px;
 	flex: 1 1 350px;
 	min-width: 0;
-	outline: 1px solid transparent;
+	outline: 2px solid transparent;
 	transition: outline-color 0.2s ease;
 }
 
@@ -278,6 +278,8 @@ main > section + section {
     border: 1px solid var(--border-default);
     border-radius: 10px;
     text-align: center;
+	outline: 2px solid transparent;
+	transition: outline-color 0.2s ease;
 }
 
 .award-card p {
@@ -345,7 +347,8 @@ footer a:hover{
 }
 
 @media (hover: hover) {
-    .project-card:hover {
+    .project-card:hover,
+	.award-card:hover {
         outline-color: var(--card-hover-outline);
     }
 }
