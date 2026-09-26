@@ -1,7 +1,8 @@
 ﻿:root {
     /* Backgrounds */
-    --page-bg: #131c17;
+    --page-bg: #1a201d;
     --content-bg: #111111;
+	--content-blob-color: #214d35;
     --navigation-bg: #1e3c30;
     --card-bg: #1e1e1e;
     --control-bg: #252525;
@@ -42,6 +43,22 @@ header {
 	position: sticky;
 	top: 0;
 	z-index: 10;
+    background-image:
+        radial-gradient(
+            ellipse 400px 80px at 1% 10%,
+            color-mix(in srgb, var(--content-bg) 75%, transparent),
+            transparent 100%
+        ),
+        radial-gradient(
+            ellipse 450px 440px at 55% 200%,
+            color-mix(in srgb, var(--content-bg) 75%, transparent),
+            transparent 100%
+        ),
+        radial-gradient(
+            ellipse 300px 300px at 90% 0%,
+            color-mix(in srgb, var(--content-bg) 75%, transparent),
+            transparent 100%
+        );	
 }
 
 .site-title {
@@ -67,6 +84,23 @@ nav a:hover {
 	color: var(--link-hover);
 }
 
+@media (min-width: 1001px) {
+    nav a {
+        position: relative;
+    }
+
+    nav a + a::before {
+        content: "";
+        position: absolute;
+        left: -15px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 2px;
+        height: 36px;
+        background-color: var(--text-primary);
+    }
+}
+
 .menu-toggle {
 	display: none;
 	background: var(--menu-button-bg);
@@ -90,9 +124,37 @@ main {
 	width: 76%;
 	padding: 24px;
 	box-sizing: content-box;
+	box-shadow: -30px 0 40px -10px var(--navigation-bg),
+				 30px 0 40px -10px var(--navigation-bg);
 	margin: auto auto;
 	display: flow-root;
 	background-color: var(--content-bg);
+	background-image:
+    radial-gradient(
+        ellipse 525px 425px at 15% 17%,
+        var(--content-blob-color),
+        transparent 100%
+    ),
+    radial-gradient(
+        ellipse 200px 200px at 35% 40%,
+        var(--content-blob-color),
+        transparent 100%
+    ),
+    radial-gradient(
+        ellipse 425px 525px at 77% 55%,
+        var(--content-blob-color),
+        transparent 100%
+    ),
+	radial-gradient(
+        ellipse 550px 400px at -10% 70%,
+        var(--content-blob-color),
+        transparent 100%
+    ),
+    radial-gradient(
+        ellipse 550px 550px at 73% 88%,
+        var(--content-blob-color),
+        transparent 100%
+    );
 }
 
 section {
@@ -146,6 +208,7 @@ main > section + section {
 
 .profile-info h3 {
 	margin: 0 0 8px;
+	font-weight: normal;
 }
 
 .profile-info p {
@@ -331,6 +394,22 @@ footer {
 	border-top: 1px solid var(--border-subtle);
 	text-align: center;
 	scroll-margin-top: 90px;
+    background-image:
+        radial-gradient(
+            ellipse 650px 400px at 20% 0%,
+            color-mix(in srgb, var(--content-bg) 75%, transparent),
+            transparent 100%
+        ),
+        radial-gradient(
+            ellipse 550px 440px at 50% 100%,
+            color-mix(in srgb, var(--content-bg) 75%, transparent),
+            transparent 100%
+        ),
+        radial-gradient(
+            ellipse 400px 400px at 85% -15%,
+            color-mix(in srgb, var(--content-bg) 75%, transparent),
+            transparent 100%
+        );	
 }
 
 footer p{
