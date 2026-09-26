@@ -29,7 +29,11 @@ body {
 	margin: 0;
 	background-color: var(--page-bg);
 	color: var(--text-primary);
-	font-family: Arial, sans-serif;
+	font-family: "Manrope", sans-serif;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='80' viewBox='0 0 160 80'%3E%3Cpath d='M0 0.5H160 M0 40.5H160 M80.5 0V40 M0.5 40V80' fill='none' stroke='%23444444' stroke-opacity='0.25' stroke-width='1'/%3E%3C/svg%3E");
+	background-size: 160px 80px;
+	background-repeat: repeat;
+
 }
 
 header {
@@ -43,6 +47,9 @@ header {
 	position: sticky;
 	top: 0;
 	z-index: 10;
+	box-shadow:
+    inset 0 3px 0 var(--navigation-bg),
+    inset 0 -3px 0 var(--navigation-bg);
     background-image:
         radial-gradient(
             ellipse 400px 80px at 1% 10%,
@@ -50,7 +57,7 @@ header {
             transparent 100%
         ),
         radial-gradient(
-            ellipse 450px 440px at 55% 200%,
+            ellipse 320px 220px at 55% 220%,
             color-mix(in srgb, var(--content-bg) 75%, transparent),
             transparent 100%
         ),
@@ -59,7 +66,7 @@ header {
             color-mix(in srgb, var(--content-bg) 75%, transparent),
             transparent 100%
         );	
-}
+} 
 
 .site-title {
 	color: var(--text-primary);
@@ -80,8 +87,9 @@ nav a {
 	text-decoration: none;
 }
 
-nav a:hover {
-	color: var(--link-hover);
+nav a:hover,
+nav a:focus-visible {
+    color: var(--card-hover-outline);
 }
 
 @media (min-width: 1001px) {
@@ -136,29 +144,29 @@ main {
         transparent 100%
     ),
     radial-gradient(
-        ellipse 200px 200px at 35% 40%,
-        var(--content-blob-color),
+        ellipse 125px 125px at 35% 40%,
+    	color-mix(in srgb, var(--content-blob-color) 40%, transparent),
         transparent 100%
     ),
     radial-gradient(
-        ellipse 425px 525px at 77% 55%,
+        ellipse 375px 425px at 80% 55%,
         var(--content-blob-color),
         transparent 100%
     ),
 	radial-gradient(
-        ellipse 550px 400px at -10% 70%,
-        var(--content-blob-color),
+        ellipse 550px 400px at -10% 60%,
+    	color-mix(in srgb, var(--content-blob-color) 72%, transparent),
         transparent 100%
     ),
     radial-gradient(
-        ellipse 550px 550px at 73% 88%,
+        ellipse 550px 550px at 71% 88%,
         var(--content-blob-color),
         transparent 100%
     );
 }
 
 section {
-	scroll-margin-top: 90px;
+	scroll-margin-top: 100px;
 }
 
 section > h1,
@@ -247,11 +255,26 @@ main > section + section {
     font: inherit;
 	font-size: 12px;
     cursor: pointer;
+	transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
 .project-filters button[aria-pressed="true"] {
     background-color: var(--filter-selected-bg);
     border-color: var(--filter-selected-border);
+}
+
+.project-filters button[aria-pressed="false"]:hover,
+.project-filters button[aria-pressed="false"]:focus-visible {
+    background-color: color-mix(
+        in srgb,
+        var(--control-bg) 85%,
+        var(--card-hover-outline)
+    );
+    border-color: color-mix(
+        in srgb,
+        var(--border-control) 60%,
+        var(--card-hover-outline)
+    );
 }
 
 .project-grid {
@@ -267,6 +290,7 @@ main > section + section {
 	background-color: var(--card-bg);
 	padding: 8px;
 	border-radius: 10px;
+	border: 2px solid var(--border-default);
 	width: 100%;
 	box-sizing: border-box;
 	max-width: 500px;
@@ -338,7 +362,7 @@ main > section + section {
     padding: 14px;
     box-sizing: border-box;
     background-color: var(--card-bg);
-    border: 1px solid var(--border-default);
+    border: 2px solid var(--border-default);
     border-radius: 10px;
     text-align: center;
 	outline: 2px solid transparent;
@@ -388,41 +412,94 @@ main > section + section {
     font-weight: bold;
 }
 
+footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0%;
+    width: 100%;
+    height: 2px;
+    background-color: var(--card-hover-outline);
+}
+
 footer {
 	padding: 24px 5%;
+	position: relative;
+	min-height: 220px;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 	background-color: var(--navigation-bg);
-	border-top: 1px solid var(--border-subtle);
+	border-top: 3px solid var(--navigation-bg);
 	text-align: center;
 	scroll-margin-top: 90px;
     background-image:
         radial-gradient(
-            ellipse 650px 400px at 20% 0%,
+            ellipse 400px 250px at 15% 0%,
             color-mix(in srgb, var(--content-bg) 75%, transparent),
             transparent 100%
         ),
         radial-gradient(
-            ellipse 550px 440px at 50% 100%,
-            color-mix(in srgb, var(--content-bg) 75%, transparent),
+            ellipse 450px 340px at 58% 110%,
+            color-mix(in srgb, var(--content-bg) 85%, transparent),
             transparent 100%
         ),
         radial-gradient(
-            ellipse 400px 400px at 85% -15%,
-            color-mix(in srgb, var(--content-bg) 75%, transparent),
+            ellipse 400px 300px at 85% -15%,
+            color-mix(in srgb, var(--content-bg) 55%, transparent),
             transparent 100%
         );	
 }
 
-footer p{
-	margin: 8px 0;
+.footer-links {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px 120px;
+    max-width: 640px;
+	width: 100%;
+    margin: 0 auto;
 }
 
-footer a {
-	color: var(--text-primary);
-	text-underline-offset: 4px;
+.footer-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 44px;
+	font-size: 20px;
+    color: var(--text-primary);
+    text-decoration: none;
 }
 
-footer a:hover{
-	color: var(--link-hover);
+.footer-links i {
+    font-size: 28px;
+    color: var(--card-hover-outline);
+    transition: color 0.2s ease;
+}
+
+.footer-links a[href]:hover,
+.footer-links a[href]:focus-visible {
+    color: var(--card-hover-outline);
+}
+
+.footer-links a[href]:hover i,
+.footer-links a[href]:focus-visible i {
+    color: var(--text-primary);
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+	transform: translateY(46px);
+    color: var(--card-hover-outline);
+}
+
+@media (max-width: 650px) {
+    .footer-links {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        max-width: 360px;
+    }
 }
 
 @media (hover: hover) {
@@ -474,7 +551,13 @@ footer a:hover{
 		margin: 0;
 		padding: 20px;
 		background: var(--navigation-bg);
-		border: 1px solid var(--border-default);
+		background-image: 
+		radial-gradient(
+    		ellipse 100px 120px at 25% 85%,
+    		color-mix(in srgb, var(--content-bg) 55%, transparent),
+    		transparent 100%
+);
+		border: 2px solid var(--border-default);
 		border-radius: 8px;
 	}
 
