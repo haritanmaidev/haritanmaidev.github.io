@@ -1,6 +1,6 @@
 ﻿:root {
     /* Backgrounds */
-    --page-bg: #1a201d;
+    --page-bg: #181d1a;
     --content-bg: #111111;
 	--content-blob-color: #214d35;
     --navigation-bg: #1e3c30;
@@ -129,7 +129,7 @@ nav a:focus-visible {
 }
 
 main {
-	width: 76%;
+	width: 70%;
 	padding: 24px;
 	box-sizing: content-box;
 	box-shadow: -30px 0 40px -10px var(--navigation-bg),
@@ -195,7 +195,7 @@ main > section + section {
 .profile-picture {
     width: 40%;
 	height: auto;
-	max-width: 400px;
+	max-width: 360px;
 	aspect-ratio: 1;
     object-fit: cover;
     border-radius: 100px;
@@ -441,12 +441,12 @@ footer {
             transparent 100%
         ),
         radial-gradient(
-            ellipse 450px 340px at 58% 110%,
+            ellipse 450px 340px at 59% 110%,
             color-mix(in srgb, var(--content-bg) 85%, transparent),
             transparent 100%
         ),
         radial-gradient(
-            ellipse 400px 300px at 85% -15%,
+            ellipse 400px 300px at 85% -17%,
             color-mix(in srgb, var(--content-bg) 55%, transparent),
             transparent 100%
         );	
