@@ -580,3 +580,90 @@ footer p {
         width: 100%;
     }
 }
+
+
+/* Individual project pages */
+.project-overview {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.project-gallery {
+    width: 100%;
+    min-width: 0;
+}
+
+.project-media {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
+    background-color: var(--content-bg);
+    border: 2px solid var(--border-default);
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.project-details {
+    width: 100%;
+    max-width: 80ch;
+    margin-inline: 0;
+    min-width: 0;
+}
+
+.project-details h1 {
+    margin: 0 0 16px;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 28px;
+}
+
+.project-details p {
+    margin: 0 0 20px;
+    line-height: 1.7;
+    color: var(--text-secondary);
+}
+
+.project-facts {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 10px 16px;
+    margin: 24px 0 0;
+}
+
+.project-facts dt {
+    font-weight: 700;
+}
+
+.project-facts dd {
+    margin: 0;
+    color: var(--text-secondary);
+}
+
+.project-writeup {
+    max-width: 80ch;
+    margin-inline: 0;
+    line-height: 1.7;
+}
+
+.project-writeup > h2 {
+    text-align: left;
+}
+
+.project-writeup h2,
+.project-writeup h3 {
+    font-family: "Space Grotesk", sans-serif;
+}
+
+.project-writeup p {
+    color: var(--text-secondary);
+}
+
+.project-page .project-tags {
+    gap: 8px;
+}
+
+.project-page .project-tags span {
+    font-size: 15px;
+    padding: 6px 12px;
+}
