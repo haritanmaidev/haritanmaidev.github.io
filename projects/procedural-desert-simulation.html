@@ -27,10 +27,31 @@
     </nav>
 </header>
 
-<main class="project-page">
-        <section class="project-overview">
+<main class="project-page"> 
+    <section class="project-overview">
         <div class="project-gallery">
-            <img src="../images/sandsimulation.png" alt="Sand dune terrain alongside the simulation visualisation" class="project-media">
+            <img src="../images/sandsimulation.png" alt="" class="project-media">
+            <div class="gallery-sidebar">
+                <div class="gallery-controls">
+                    <button class="gallery-arrow gallery-previous" type="button" aria-label="Scroll to earlier thumbnails">
+                        <i class="fa-solid fa-chevron-up" aria-hidden="true"></i>
+                    </button>
+                    <div class="gallery-thumbnails">
+                        <button class="gallery-thumbnail" type="button" aria-label="Show simulation image" aria-pressed="true"
+                            data-src="../images/sandsimulation.png" data-alt="">
+                            <img src="../images/sandsimulation.png" alt="">
+                            <span>IMG</span>
+                        </button>
+                        <button class="gallery-thumbnail" type="button" aria-label="Show animated simulation" aria-pressed="false" data-src="../images/sandsimulation.gif" data-alt="">
+                            <img src="../images/sandsimulation.gif" alt="">
+                            <span>GIF</span>
+                        </button>
+                    </div>
+                    <button class="gallery-arrow gallery-next" type="button" aria-label="Scroll to later thumbnails">
+                        <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
         </div>
         <div class="project-details">
             <h1>Project Overview</h1>
