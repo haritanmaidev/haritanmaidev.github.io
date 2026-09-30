@@ -33,7 +33,7 @@ body {
 	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='80' viewBox='0 0 160 80'%3E%3Cpath d='M0 0.5H160 M0 40.5H160 M80.5 0V40 M0.5 40V80' fill='none' stroke='%23444444' stroke-opacity='0.25' stroke-width='1'/%3E%3C/svg%3E");
 	background-size: 160px 80px;
 	background-repeat: repeat;
-
+    word-spacing: 2px;  
 }
 
 header {
@@ -67,6 +67,14 @@ header {
             transparent 100%
         );	
 } 
+
+button {
+    word-spacing: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    word-spacing: normal;
+}
 
 .site-title {
 	color: var(--text-primary);
@@ -298,6 +306,8 @@ main > section + section {
 	min-width: 0;
 	outline: 2px solid transparent;
 	transition: outline-color 0.2s ease;
+    color: inherit;
+    text-decoration: none;
 }
 
 .project-info {
@@ -587,6 +597,11 @@ main.project-page > section + section {
     margin-top: 100px;
 }
 
+.project-page h3,
+.project-page dt {
+    font-weight: 500;
+}
+
 .project-overview {
     display: flex;
     flex-direction: column;
@@ -599,6 +614,8 @@ main.project-page > section + section {
     gap: 12px;
     width: 100%;
     min-width: 0;
+    max-width: 1350px;
+    margin-inline: auto;
     padding: 10px;
     box-sizing: border-box;
     background-color: var(--card-bg);
@@ -619,8 +636,8 @@ main.project-page > section + section {
 
 .project-details {
     width: 100%;
-    max-width: 80ch;
-    margin-inline: 0;
+    max-width: 1350px;
+    margin-inline: auto;
     min-width: 0;
 }
 
@@ -643,9 +660,6 @@ main.project-page > section + section {
     margin: 24px 0 0;
 }
 
-.project-facts dt {
-    font-weight: 700;
-}
 
 .project-facts dd {
     margin: 0;
@@ -653,8 +667,8 @@ main.project-page > section + section {
 }
 
 .project-writeup {
-    max-width: 80ch;
-    margin-inline: 0;
+    max-width: 1350px;
+    margin-inline: auto;
     line-height: 1.7;
 }
 
@@ -666,8 +680,9 @@ main.project-page > section + section {
 .project-writeup h3 {
     font-family: "Space Grotesk", sans-serif;
 }
-
+.project-details p,
 .project-writeup p {
+    max-width: 80ch;
     color: var(--text-secondary);
 }
 
@@ -702,6 +717,7 @@ main.project-page > section + section {
     min-height: 0;
     min-width: 0;
     overflow: auto;
+    justify-content: safe center;
 }
 
 .gallery-thumbnail {
@@ -716,6 +732,11 @@ main.project-page > section + section {
     border-radius: 6px;
     background-color: var(--content-bg);
     cursor: pointer;
+    scrollbar-width: none;
+}
+
+.gallery-thumbnails::-webkit-scrollbar {
+    display: none;
 }
 
 .gallery-thumbnail img {
@@ -749,22 +770,27 @@ main.project-page > section + section {
     z-index: 2;
     left: 50%;
     transform: translateX(-50%);
-    width: 28px;
-    height: 28px;
+    width: 36px;
+    height: 24px;
+    border-radius: 6px;
     padding: 0;
-    border: 1px solid var(--border-default);
-    border-radius: 50%;
+    border: 2px solid var(--border-control);
     background-color: var(--badge-bg);
     color: var(--text-primary);
     cursor: pointer;
+    display: grid;
+    place-items: center;
+    box-sizing: border-box;
 }
 
 .gallery-previous {
-    top: 4px;
+    top: 0;
+    transform: translate(-50%, -25%);
 }
 
 .gallery-next {
-    bottom: 4px;
+    bottom: 0;
+    transform: translate(-50%, 25%);
 }
 
 .gallery-arrow:disabled {
@@ -774,6 +800,13 @@ main.project-page > section + section {
 
 .gallery-arrow:not(:disabled):hover {
     color: var(--card-hover-outline);
+    border-color: var(--card-hover-outline);
+}
+
+.gallery-arrow i {
+    display: block;
+    font-size: 14px;
+    line-height: 1;
 }
 
 @media (max-width: 1000px) {
@@ -794,22 +827,30 @@ main.project-page > section + section {
         width: 120px;
     }
 
-    .gallery-arrow i {
+    .gallery-previous i {
+        transform: rotate(-90deg);
+    }
+
+    .gallery-next i {
         transform: rotate(-90deg);
     }
 
     .gallery-arrow {
+        width: 24px;
+        height: 36px;
         top: 50%;
         bottom: auto;
         transform: translateY(-50%);
     }
 
     .gallery-previous {
-        left: 4px;
+        left: 0;
+        transform: translate(-20%, -50%);
     }
 
     .gallery-next {
         left: auto;
-        right: 4px;
+        right: 0;
+        transform: translate(20%, -50%);
     }
 }
