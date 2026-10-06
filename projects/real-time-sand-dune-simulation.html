@@ -74,40 +74,64 @@
         </div>
         <div class="project-details">
             <h1>Project Overview</h1>
-            <p>A GPU-based simulation of a cellular automaton algorithm that simulates wind-driven and terrain-aware sand saltation observed in real life.</p>
+            <p>This is a GPU-based model of a cellular automata algorithm where dunes procedurally emerge on a grid, based on rules 
+            such as wind-driven sand saltation, probabilistic deposition, wind-shadow zones, wind warping, avalanching, and terrain. 
+            The grid is represented by a 2D integer array where each cell stores the height value of sand deposited onto it,
+            forming a heightmap.<br>This data is mapped to a texture where colours are assigned based on the height value of each cell
+            and is later rendered as a 3D mesh using vertex displacement. This system can also be layered upon other grids representing different 
+            terrains.</p>
             <div class="project-tags">
                 <span>Unity</span>
                 <span>C#</span>
                 <span>HLSL</span>
                 <span>Compute Shaders</span>
-                <span>Vertex Shader</span>
+                <span>PCG</span>
                 <span>Award Winner</span>
             </div>
             <dl class="project-facts">
-                <dt>Responsibility</dt><dd>Graphics Programming, PCG Programming</dd>
-                <dt>Duration</dt><dd>6 Weeks</dd>
-                <dt>Project type</dt><dd>Solo Master's Project</dd>
+                <dt>Responsibilities</dt><dd>Graphics Programming, PCG Programming</dd>
+                <dt>Development Time</dt><dd>6 Weeks</dd>
             </dl>
         </div>
     </section>
     <section class="project-writeup">
-        <h2>Systems and Features</h2>
-        <h3>[Feature name]</h3>
-        <p>[What this feature does and how it works at a high level.]</p>
+    <h2>Systems and Features</h2>
+        <ul>
+            <li><dt>GPU-Based Simulation</dt></li>
+            <li><dt>Customizable Simulation Parameters</dt></li>
+            <li><dt>Angle of Repose, Wind Shadow, &amp Wind Warp Calculations</dt></li>
+            <li><dt>Perlin Noise Terrain-Aware Sand Simulation</dt></li>
+            <li><dt>Height Map Texture Generation</dt></li>
+            <li><dt>Mesh Deformation via Vertex Displacement Shader</dt></li>
+            <li><dt>Debug Tools - Color Coding</dt></li>
+        </ul>
     </section>
     <section class="project-writeup">
-        <h2>Challenges and Problems Solved</h2>
-        <h3>[Challenge name]</h3>
-        <p>[The problem, how you approached it, the outcome, and anything you learned or would improve.]
-        </p>
+    <h2>What I Learnt</h2>
+    <d1 class="project-facts">
+        <dd>
+            Initially, this system was written in C# which had major performance issues as it had to run the cellular automata algorithm for about 
+            500K+ times per second on the CPU to produce decent results, and increasing the grid size made it impossible to run. This problem was 
+            solved by using Compute Shaders written in HLSL, which runs on the GPU to parellely process the simulation. The GPU version performed 
+            significantly better, it managed to run the algorithm accross 4M+ cells per frame and gave 200FPS which means the total amount of 
+            calculations were 800M+ (4,000,000 cells x 200 frames per second). Transition the project from C# to HLSL was quite challenging as I 
+            have limited experience with shader programming so this was a steep learning curve. <br> 
+            Additionally, I had to tackle some basic PCG systems to get a grasp of how PCG works beforing starting the sand simulation, so I also 
+            made a seed-based basic solar system generator along with a perlin noise terrain mesh generator.
+        </dd>
     </section>
     <section class="project-writeup">
         <h2>Documentation</h2>
-        <p>[Project reports, PDFs, blog posts, or other supporting material.]</p>
+        <p>Here's a position paper I've written on this project during my university studies.</p>
     </section>
     <section class="project-writeup">
-        <h2>Future Works</h2>
-        <h3>[List the future tasks]</h3>
+        <h2>Future Work</h2>
+        <ul>
+            <li><dt>Collision Detection</dt></li>
+            <li><dt>Vegetation Generation</dt></li>
+            <li><dt>Terrain Erosion</dt></li>
+            <li><dt>Simulation Timeline Controller</dt></li>
+        </ul>
     </section>
 </main>
 

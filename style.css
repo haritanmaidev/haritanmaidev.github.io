@@ -308,7 +308,9 @@ main > section + section {
 	transition: outline-color 0.2s ease;
     color: inherit;
     text-decoration: none;
+    position: relative;
 }
+
 
 .project-info {
 	padding: 16px 2px 2px;
@@ -353,6 +355,69 @@ main > section + section {
 	padding: 4px 8px;
 	border-radius: 6px;
 	font-size: 12px;
+}
+
+.project-award-badge {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 24px;
+    color: var(--card-hover-outline);
+    font-size: 17px;
+    font-weight: 800;
+    white-space: nowrap;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+}
+
+.project-award-badge::before,
+.project-award-badge::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 60%;
+    height: 100%;
+    background-color: var(--card-bg);
+    border-radius: 6px;
+    z-index: -1;
+}
+
+.project-award-badge::before {
+    left: 0;
+    transform-origin: top left;
+    transform: skewX(25deg);
+}
+
+.project-award-badge::after {
+    right: 0;
+    transform-origin: top right;
+    transform: skewX(-25deg);
+}
+
+.project-award-badge i {
+    font-size: 12px;
+    line-height: 0;
+}
+
+.project-grid .project-card.shared-row .project-tags {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.project-grid .project-card.shared-row .project-tags::-webkit-scrollbar {
+    display: none;
+}
+
+.project-grid .project-card.shared-row .project-tags span {
+    flex-shrink: 0;
+    white-space: nowrap;
 }
 
 .award-grid {
@@ -519,6 +584,12 @@ footer p {
     }
 }
 
+@media (hover: hover) {
+    .project-card:hover .project-award-badge {
+        opacity: 0;
+    }
+}
+
 @media (hover: hover) and (prefers-reduced-motion: no-preference) {
     .project-thumbnail:hover .project-preview {
         opacity: 1;
@@ -594,12 +665,12 @@ footer p {
 
 /* Individual project pages */
 main.project-page > section + section {
-    margin-top: 100px;
+    margin-top: 60px;
 }
 
 .project-page h3,
 .project-page dt {
-    font-weight: 500;
+    font-weight: 400;
 }
 
 .project-overview {
@@ -642,7 +713,7 @@ main.project-page > section + section {
 }
 
 .project-details h1 {
-    margin: 0 0 16px;
+    margin: 0 0 6px;
     font-family: "Space Grotesk", sans-serif;
     font-size: 28px;
 }
@@ -660,7 +731,6 @@ main.project-page > section + section {
     margin: 24px 0 0;
 }
 
-
 .project-facts dd {
     margin: 0;
     color: var(--text-secondary);
@@ -674,6 +744,11 @@ main.project-page > section + section {
 
 .project-writeup > h2 {
     text-align: left;
+    margin-bottom: 6px;
+}
+
+.project-writeup > h2 + * {
+    margin-top: 0;
 }
 
 .project-writeup h2,
@@ -684,6 +759,24 @@ main.project-page > section + section {
 .project-writeup p {
     max-width: 80ch;
     color: var(--text-secondary);
+}
+
+.project-writeup ul {
+    padding-left: 24px;
+    list-style-type: disc;
+}
+
+.project-writeup li {
+    margin-bottom: 4px;
+}
+
+.project-writeup li h3 {
+    margin: 0;
+}
+
+.project-writeup li .project-facts {
+    display: block;
+    margin: 0;
 }
 
 .project-page .project-tags {
@@ -718,6 +811,7 @@ main.project-page > section + section {
     min-width: 0;
     overflow: auto;
     justify-content: safe center;
+    scrollbar-width: none;
 }
 
 .gallery-thumbnail {
@@ -732,7 +826,6 @@ main.project-page > section + section {
     border-radius: 6px;
     background-color: var(--content-bg);
     cursor: pointer;
-    scrollbar-width: none;
 }
 
 .gallery-thumbnails::-webkit-scrollbar {

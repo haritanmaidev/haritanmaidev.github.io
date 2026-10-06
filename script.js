@@ -129,3 +129,89 @@ document.querySelectorAll(".project-gallery").forEach((gallery) => {
     narrowScreen.addEventListener("change", updateArrows);
     updateArrows();
 });
+
+const projectGrid = document.querySelector(".project-grid");
+
+if (projectGrid) {
+    function updateTagRows() {
+        const cards = [...projectGrid.querySelectorAll(".project-card")];
+        const rows = [];
+
+        cards.filter(card => !card.hidden).forEach(card => {
+            const top = card.getBoundingClientRect().top;
+            let row = rows.find(row => Math.abs(row.top - top) < 2);
+
+            if (!row)
+            {
+                row = { top, cards: [] };
+                rows.push(row);
+            }
+
+            row.cards.push(card);
+        });
+
+        const sharedCards = new Set(rows.filter(row => row.cards.length > 1).flatMap(row => row.cards));
+
+        cards.forEach(card => { card.classList.toggle("shared-row", sharedCards.has(card)); });
+    }
+
+    new ResizeObserver(updateTagRows).observe(projectGrid);
+    filterButtons.forEach(button => { button.addEventListener("click", updateTagRows); });
+
+    projectGrid.querySelectorAll(".project-tags").forEach(tags => {
+    let activeSide = 0;
+    let suppressClick = false;
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+    function getSide(event) 
+    {
+        if (!tags.closest(".shared-row")) return 0;
+        if (tags.scrollWidth <= tags.clientWidth + 1) return 0;
+        const bounds = tags.getBoundingClientRect();
+        const x = event.clientX - bounds.left;
+        if (x <= 28) return -1;
+        if (x >= bounds.width - 28) return 1;
+        return 0;
+    }
+
+    function revealTags(side) {
+        if (side === activeSide) return;
+        activeSide = side;
+        if (!side) return;
+        tags.scrollTo({ left: side === 1 ? tags.scrollWidth - tags.clientWidth : 0, behavior: reducedMotion.matches ? "instant" : "smooth" });
+    }
+
+    tags.addEventListener("pointermove", event => {
+        if (event.pointerType === "mouse") { revealTags(getSide(event)); }});
+
+    tags.addEventListener("pointerleave", () => { activeSide = 0; });
+
+    tags.addEventListener("pointerdown", event => {
+        const side = getSide(event);
+        suppressClick = side !== 0;
+        if (side) {
+            event.preventDefault();
+            revealTags(side);
+        }
+    });
+
+    tags.addEventListener("pointerup", () => { activeSide = 0; });
+    tags.addEventListener("pointercancel", () => 
+    {
+        activeSide = 0;
+        suppressClick = false;
+    });
+
+    tags.addEventListener("click", event => 
+    {
+        if (suppressClick || getSide(event)) 
+        {
+            event.preventDefault();
+            event.stopPropagation();
+        }
+        suppressClick = false;
+    });
+    });
+
+    updateTagRows();
+}
