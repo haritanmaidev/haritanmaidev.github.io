@@ -1,0 +1,164 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name= "viewport" content= "width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
+    <title>Procedural Abiltiy System | Hari's Portfolio</title>
+</head>
+
+	
+<body>
+<header>
+    <span class="site-title">Hari's Portfolio&nbsp;&nbsp; | &nbsp;&nbsp;Procedural Abiltiy System</span>
+    <button class="menu-toggle" type="button" aria-label="Navigation Menu"
+     aria-expanded="false" aria-controls="main-nav">
+     <span aria-hidden="true"></span>
+     <span aria-hidden="true"></span>
+     <span aria-hidden="true"></span>
+    </button>
+    <nav id="main-nav">
+        <a class="back-link" href="../index.html#projects">Home</a>
+        <a href="#contact">Contact Me</a>
+    </nav>
+</header>
+
+<main class="project-page"> 
+    <section class="project-overview">
+        <div class="project-gallery">
+            <img src="../images/sandsimulation1.gif" alt="" class="project-media">
+            <div class="gallery-sidebar">
+                <div class="gallery-controls">
+                    <button class="gallery-arrow gallery-previous" type="button" aria-label="Scroll to earlier thumbnails">
+                        <i class="fa-solid fa-chevron-up" aria-hidden="true"></i>
+                    </button>
+                    <div class="gallery-thumbnails">
+                        <button class="gallery-thumbnail" type="button" aria-label="Show simulation GIF 1" aria-pressed="true" data-src="../images/sandsimulation1.gif">
+                            <img src="../images/sandsimulation1.gif" alt="">
+                            <span>GIF</span>
+                        </button>
+                        <button class="gallery-thumbnail" type="button" aria-label="Show simulation GIF 2" aria-pressed="false" data-src="../images/sandsimulation2.gif">
+                            <img src="../images/sandsimulation2.gif" alt="">
+                            <span>GIF</span>
+                        </button>
+                        <button class="gallery-thumbnail" type="button" aria-label="Show simulation GIF 3" aria-pressed="false" data-src="../images/sandsimulation3.gif">
+                            <img src="../images/sandsimulation3.gif" alt="">
+                            <span>GIF</span>
+                        </button>
+                        <button class="gallery-thumbnail" type="button" aria-label="Show simulation image" aria-pressed="false" data-src="../images/sandsimulation1.png">
+                            <img src="../images/sandsimulation1.png" alt="">
+                            <span>IMG</span>
+                        </button>
+                        <button class="gallery-thumbnail" type="button" aria-label="Show simulation image 2" aria-pressed="false" data-src="../images/sandsimulation2.png">
+                            <img src="../images/sandsimulation2.png">
+                            <span>IMG</span>
+                        </button>
+                        <button class="gallery-thumbnail" type="button" aria-label="Show simulation image 3" aria-pressed="false" data-src="../images/sandsimulation3.png">
+                            <img src="../images/sandsimulation3.png">
+                            <span>IMG</span>
+                        </button>
+                        <button class="gallery-thumbnail" type="button" aria-label="Show simulation image 4" aria-pressed="false" data-src="../images/sandsimulation4.png">
+                            <img src="../images/sandsimulation4.png">
+                            <span>IMG</span>
+                        </button>
+                    </div>
+                    <button class="gallery-arrow gallery-next" type="button" aria-label="Scroll to later thumbnails">
+                        <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="project-details">
+            <h1>Project Overview</h1>
+            <p>This is a GPU-based model of a cellular automata algorithm where dunes procedurally emerge on a grid, based on rules 
+            such as wind-driven sand saltation, probabilistic deposition, wind-shadow zones, wind warping, avalanching, and terrain. 
+            The grid is represented by a 2D integer array where each cell stores the height value of sand deposited onto it,
+            forming a heightmap.<br>This data is mapped to a texture where colours are assigned based on the height value of each cell
+            and is later rendered as a 3D mesh using vertex displacement. This system can also be layered upon other grids representing different 
+            terrains.</p>
+            <div class="project-tags">
+                <span>Unity</span>
+                <span>C#</span>
+                <span>HLSL</span>
+                <span>Compute Shaders</span>
+                <span>PCG</span>
+                <span>Award Winner</span>
+            </div>
+            <dl class="project-facts">
+                <dt>Responsibilities</dt><dd>Graphics Programming, PCG Programming</dd>
+                <dt>Development Time</dt><dd>6 Weeks</dd>
+            </dl>
+        </div>
+    </section>
+    <section class="project-writeup">
+    <h2>Systems and Features</h2>
+        <ul>
+            <li><dt>GPU-Based Simulation</dt></li>
+            <li><dt>Customizable Simulation Parameters</dt></li>
+            <li><dt>Angle of Repose, Wind Shadow, &amp Wind Warp Calculations</dt></li>
+            <li><dt>Perlin Noise Terrain-Aware Sand Simulation</dt></li>
+            <li><dt>Height Map Texture Generation</dt></li>
+            <li><dt>Mesh Deformation via Vertex Displacement Shader</dt></li>
+            <li><dt>Debug Tools - Color Coding</dt></li>
+        </ul>
+    </section>
+    <section class="project-writeup">
+    <h2>What I Learnt</h2>
+    <d1 class="project-facts">
+        <dd>
+            Initially, this system was written in C# which had major performance issues as it had to run the cellular automata algorithm for about 
+            500K+ times per second on the CPU to produce decent results, and increasing the grid size made it impossible to run. This problem was 
+            solved by using Compute Shaders written in HLSL, which runs on the GPU to parellely process the simulation. The GPU version performed 
+            significantly better, it managed to run the algorithm accross 4M+ cells per frame and gave 200FPS which means the total amount of 
+            calculations were 800M+ (4,000,000 cells x 200 frames per second). Transition the project from C# to HLSL was quite challenging as I 
+            have limited experience with shader programming so this was a steep learning curve. <br> 
+            Additionally, I had to tackle some basic PCG systems to get a grasp of how PCG works beforing starting the sand simulation, so I also 
+            made a seed-based basic solar system generator along with a perlin noise terrain mesh generator.
+        </dd>
+    </section>
+    <section class="project-writeup">
+        <h2>Documentation</h2>
+        <p>Here's a position paper I've written on this project during my university studies.</p>
+    </section>
+    <section class="project-writeup">
+        <h2>Future Work</h2>
+        <ul>
+            <li><dt>Collision Detection</dt></li>
+            <li><dt>Vegetation Generation</dt></li>
+            <li><dt>Terrain Erosion</dt></li>
+            <li><dt>Simulation Timeline Controller</dt></li>
+        </ul>
+    </section>
+</main>
+
+<footer id="contact">
+    <div class="footer-links">
+        <a href="https://github.com/haritanmaidev" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-github" aria-hidden="true"></i>
+            <span>GitHub</span>
+        </a>
+        <a href="https://www.linkedin.com/in/hari-tanmai-gandi" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+            <span>LinkedIn</span>
+        </a>
+
+        <a href="https://www.artstation.com/hacehs" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-artstation" aria-hidden="true"></i>
+            <span>ArtStation</span>
+        </a>
+        <a>
+            <i class="fa-solid fa-file-lines" aria-hidden="true"></i>
+            <span>CV</span>
+        </a>
+    </div>
+    <p>© 2026 Hari Tanmai Gandi</p>
+</footer>
+<script src="../script.js"></script>
+</body>
+
+	
+</html>
