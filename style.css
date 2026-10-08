@@ -636,8 +636,7 @@ footer p {
 		radial-gradient(
     		ellipse 100px 120px at 25% 85%,
     		color-mix(in srgb, var(--content-bg) 55%, transparent),
-    		transparent 100%
-);
+    		transparent 100%);
 		border: 2px solid var(--border-default);
 		border-radius: 8px;
 	}
