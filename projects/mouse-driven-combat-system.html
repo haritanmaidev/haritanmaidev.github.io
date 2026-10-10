@@ -8,13 +8,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css">
     <link rel="stylesheet" href="../style.css">
-    <title>Real-Time Sand Dune Simulation | Hari's Portfolio</title>
+    <title>Procedural Spell System | Hari's Portfolio</title>
 </head>
 
 	
 <body>
 <header>
-    <span class="site-title">Hari's Portfolio&nbsp;&nbsp; | &nbsp;&nbsp;Real-Time Sand Dune Simulation</span>
+    <span class="site-title">Hari's Portfolio&nbsp;&nbsp; | &nbsp;&nbsp;Procedural Spell System</span>
     <button class="menu-toggle" type="button" aria-label="Navigation Menu"
      aria-expanded="false" aria-controls="main-nav">
      <span aria-hidden="true"></span>
@@ -74,63 +74,62 @@
         </div>
         <div class="project-details">
             <h1>Project Overview</h1>
-            <p>This is a GPU-based model of a cellular automata algorithm where dunes procedurally emerge on a grid, based on rules 
-            such as wind-driven sand saltation, probabilistic deposition, wind-shadow zones, wind warping, avalanching, and terrain. 
-            The grid is represented by a 2D integer array where each cell stores the height value of sand deposited onto it,
-            forming a heightmap.<br>This data is mapped to a texture where colours are assigned based on the height value of each cell
-            and is later rendered as a 3D mesh using vertex displacement. This system can also be layered upon other grids representing different 
-            terrains.</p>
+            <p>
+                a given spell.</p>
             <div class="project-tags">
                 <span>Unity</span>
                 <span>C#</span>
-                <span>HLSL</span>
-                <span>Compute Shaders</span>
-                <span>PCG</span>
-                <span>Award Winner</span>
+                <span>Design</span>
+                <span>Animation</span>
             </div>
             <dl class="project-facts">
-                <dt>Responsibilities</dt><dd>Graphics Programming, PCG Programming, Technical Artist</dd>
-                <dt>Development Time</dt><dd>6 Weeks</dd>
+                <dt>Responsibilities</dt><dd>Gameplay Programming, Animation Programming, Technical Design</dd>
+                <dt>Development Time</dt><dd>8 Weeks</dd>
             </dl>
         </div>
     </section>
     <section class="project-writeup">
     <h2>Systems and Features</h2>
         <ul>
-            <li><dt>GPU-Based Simulation</dt></li>
-            <li><dt>Customizable Simulation Parameters</dt></li>
-            <li><dt>Angle of Repose, Wind Shadow, &amp Wind Warp Calculations</dt></li>
-            <li><dt>Perlin Noise Terrain-Aware Sand Simulation</dt></li>
-            <li><dt>Height Map Texture Generation</dt></li>
-            <li><dt>Mesh Deformation via Vertex Displacement Shader</dt></li>
-            <li><dt>Debug Tools - Color Coding</dt></li>
+            <li><dt>Modular Spell Builder System</dt></li>
+            <li><dt>Interactive Spell Builder UI</dt></li>
+            <li><dt>Compatibility Rules for Spell Generation</dt></li>
+            <li><dt>Spell Modifiers System</dt></li>
+            <li><dt>Spell Upgrades System</dt></li>
+            <li><dt>Scriptable Objects for Spell &amp Loadout Data</dt></li>
+            <li><dt>Third-Person Character Controller</dt></li>
+            <li><dt>Object Pooled Enemy Wave System</dt></li>
+            <li><dt>Combat Feedback Mechanics</dt></li>
         </ul>
     </section>
     <section class="project-writeup">
     <h2>What I Learnt</h2>
     <d1 class="project-facts">
         <dd>
-            Initially, this system was written in C# which had major performance issues as it had to run the cellular automata algorithm for about 
-            500K+ times per second on the CPU to produce decent results, and increasing the grid size made it impossible to run. This problem was 
-            solved by using Compute Shaders written in HLSL, which runs on the GPU to parellely process the simulation. The GPU version performed 
-            significantly better, it managed to run the algorithm accross 4M+ cells per frame and gave 200FPS which means the total amount of 
-            calculations were 800M+ (4,000,000 cells x 200 frames per second). Transition the project from C# to HLSL was quite challenging as I 
-            have limited experience with shader programming so this was a steep learning curve. Additionally, I had to practice writing PCG code 
-            beforing starting this project in order to get a grasp of how PCG works, so I also made a seed-based basic solar system generator along 
-            with a perlin noise terrain mesh generator.
+            This is a complex and high scoped project as the end goal is to create a flexible and expandable system which can generate a vast amount of spells a user can think of. 
+            So the initial challenges were about understanding how to classify various aspects of abilities seen in gaming into separate categories, understand what makes an ability 
+            feel unique or meangingful to players, and how to design a framework that provides a modular structure for the code. This whole process was especially hard because there 
+            aren't any well-established methodologies that breakdown all aspects of an ability into defined categories, and such resources are often underexplored or inaccesible due 
+            to games being proprietary. To build this framework, I had to research, playtest various games, evaluate my framework in iterations, and revise it to accommodate new 
+            mandatory changes made when coding it in Unity. This process gave me a lot of experience in approaching the design of large and complex systems. I've also 
+            gained experience in writing modular code as this project involves many distinct behaviours of an ability that need to work together such as its 
+            motion pathing, activation modes, positioning anchors, modifiers, targetting, collision detection methods, and etc. Additionally, making the spell 
+            builder UI using Unity's UI Toolkit also required a good amount of exploration in UI programming. 
         </dd>
     </section>
     <section class="project-writeup">
         <h2>Documentation</h2>
-        <p>Here's a position paper I've written on this project during my university studies.</p>
+        <p>Here's a essay I've written on this project as a part of my assignment during my master's.</p>
     </section>
     <section class="project-writeup">
         <h2>Future Work</h2>
         <ul>
-            <li><dt>Collision Detection</dt></li>
-            <li><dt>Vegetation Generation</dt></li>
-            <li><dt>Terrain Erosion</dt></li>
-            <li><dt>Simulation Timeline Controller</dt></li>
+            <li><dt>Implement More Spell Types</dt></li>
+            <li><dt>Implement More Modifiers</dt></li>
+            <li><dt>Spell Motion &amp Modifier Combination System</dt></li>
+            <li><dt>Spell Motion &amp Modifier Transition System</dt></li>
+            <li><dt>Procedural VFX &amp SFX</dt></li>
+            <li><dt>Scaling Rules</dt></li>
         </ul>
     </section>
 </main>
