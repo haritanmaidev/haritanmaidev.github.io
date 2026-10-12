@@ -38,15 +38,15 @@
                     </button>
                     <div class="gallery-thumbnails">
                         <button class="gallery-thumbnail" type="button" aria-label="Show simulation GIF 1" aria-pressed="true" data-src="../images/sandsimulation1.gif">
-                            <img src="../images/sandsimulation1.gif" alt="">
+                            <img src="../images/sandsimulation1-thumb.png" alt="">
                             <span>GIF</span>
                         </button>
                         <button class="gallery-thumbnail" type="button" aria-label="Show simulation GIF 2" aria-pressed="false" data-src="../images/sandsimulation2.gif">
-                            <img src="../images/sandsimulation2.gif" alt="">
+                            <img src="../images/sandsimulation2-thumb.png" alt="">
                             <span>GIF</span>
                         </button>
                         <button class="gallery-thumbnail" type="button" aria-label="Show simulation GIF 3" aria-pressed="false" data-src="../images/sandsimulation3.gif">
-                            <img src="../images/sandsimulation3.gif" alt="">
+                            <img src="../images/sandsimulation3-thumb.png" alt="">
                             <span>GIF</span>
                         </button>
                         <button class="gallery-thumbnail" type="button" aria-label="Show simulation image" aria-pressed="false" data-src="../images/sandsimulation1.png">
@@ -114,9 +114,9 @@
             500K+ times per second on the CPU to produce decent results, and increasing the grid size made it impossible to run. This problem was 
             solved by using Compute Shaders written in HLSL, which runs on the GPU to parellely process the simulation. The GPU version performed 
             significantly better, it managed to run the algorithm accross 4M+ cells per frame and gave 200FPS which means the total amount of 
-            calculations were 800M+ (4,000,000 cells x 200 frames per second). Transition the project from C# to HLSL was quite challenging as I 
-            have limited experience with shader programming so this was a steep learning curve. Additionally, I had to practice writing PCG code 
-            beforing starting this project in order to get a grasp of how PCG works, so I also made a seed-based basic solar system generator along 
+            calculations were 800M+ (4,000,000 cells x 200 frames per second). Making this transition from C# to HLSL was quite challenging as I 
+            have limited experience with shader programming, so this was a steep learning curve. In the process of practicing PCG code 
+            beforing starting this project get a grasp of how PCG works, I made a seed-based basic solar system generator along 
             with a perlin noise terrain mesh generator.
         </dd>
     </section>

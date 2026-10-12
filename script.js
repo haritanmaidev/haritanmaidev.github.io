@@ -44,7 +44,7 @@ filterButtons.forEach((button) => {
 });
 
 document.querySelectorAll(".project-gallery").forEach((gallery) => {
-    const viewer = gallery.querySelector(".project-media");
+    let viewer = gallery.querySelector(".project-media");
     const strip = gallery.querySelector(".gallery-thumbnails");
     const thumbnails = gallery.querySelectorAll(".gallery-thumbnail");
     const previous = gallery.querySelector(".gallery-previous");
@@ -85,19 +85,26 @@ document.querySelectorAll(".project-gallery").forEach((gallery) => {
         });
     }
 
-    thumbnails.forEach((thumbnail) => {
+    thumbnails.forEach(thumbnail => {
         thumbnail.addEventListener("click", () => {
             if (thumbnail.getAttribute("aria-pressed") === "true") return;
 
-            viewer.src = thumbnail.dataset.src;
-            viewer.alt = thumbnail.dataset.alt;
+            const isYouTube = thumbnail.dataset.type === "youtube";
+            const nextViewer = document.createElement(isYouTube ? "iframe" : "img");
+            nextViewer.className = "project-media";
 
-            thumbnails.forEach((item) => {
-                item.setAttribute(
-                    "aria-pressed",
-                    String(item === thumbnail)
-                );
-            });
+            if (isYouTube) {
+                nextViewer.title = "YouTube video";
+                nextViewer.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
+                nextViewer.referrerPolicy = "strict-origin-when-cross-origin";
+                nextViewer.allowFullscreen = true;
+            }
+
+            nextViewer.src = thumbnail.dataset.src;
+            viewer.replaceWith(nextViewer);
+            viewer = nextViewer;
+
+            thumbnails.forEach(item => { item.setAttribute("aria-pressed", String(item === thumbnail)); });
         });
     });
 

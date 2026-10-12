@@ -704,6 +704,10 @@ main.project-page > section + section {
     box-sizing: border-box;
 }
 
+iframe.project-media {
+    height: auto;
+}
+
 .project-details {
     width: 100%;
     max-width: 1350px;
