@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name= "viewport" content= "width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
+    <title>Pushy Plushy | Hari's Portfolio</title>
+</head>
+
+	
+<body>
+<header>
+    <span class="site-title">Hari's Portfolio&nbsp;&nbsp; | &nbsp;&nbsp;Pushy Plushy</span>
+    <button class="menu-toggle" type="button" aria-label="Navigation Menu"
+     aria-expanded="false" aria-controls="main-nav">
+     <span aria-hidden="true"></span>
+     <span aria-hidden="true"></span>
+     <span aria-hidden="true"></span>
+    </button>
+    <nav id="main-nav">
+        <a class="back-link" href="../index.html#projects">Home</a>
+        <a href="#contact">Contact Me</a>
+    </nav>
+</header>
+
+<main class="project-page"> 
+    <section class="project-overview">
+        <div class="project-gallery">
+            <img src="../images/pushyplushy1.png" alt="" class="project-media">
+            <div class="gallery-sidebar">
+                <div class="gallery-controls">
+                    <button class="gallery-arrow gallery-previous" type="button">
+                        <i class="fa-solid fa-chevron-up" aria-hidden="true"></i>
+                    </button>
+                    <div class="gallery-thumbnails">
+                        <button class="gallery-thumbnail" type="button" aria-pressed="true" data-src="../images/pushyplushy1.png">
+                            <img src="../images/pushyplushy1.png" alt="">
+                            <span>IMG</span>
+                        </button>
+                        <button class="gallery-thumbnail" type="button" aria-pressed="false" data-src="../images/pushyplushy2.png">
+                            <img src="../images/pushyplushy2.png" alt="">
+                            <span>IMG</span>
+                        </button>
+                        <button class="gallery-thumbnail" type="button" aria-pressed="false" data-src="../images/pushyplushy3.png">
+                            <img src="../images/pushyplushy3.png" alt="">
+                            <span>IMG</span>
+                        </button>
+                        <button class="gallery-thumbnail" type="button" aria-pressed="false" data-src="../images/pushyplushy5.png">
+                            <img src="../images/pushyplushy5.png">
+                            <span>IMG</span>
+                        </button>
+                        <button class="gallery-thumbnail" type="button" aria-pressed="false" data-src="../images/pushyplushy6.png">
+                            <img src="../images/pushyplushy6.png">
+                            <span>IMG</span>
+                        </button>
+                        <button class="gallery-thumbnail" type="button" aria-pressed="false" data-src="../images/pushyplushy4.png">
+                            <img src="../images/pushyplushy4.png">
+                            <span>IMG</span>
+                        </button>
+                    </div>
+                    <button class="gallery-arrow gallery-next" type="button" aria-label="Scroll to later thumbnails">
+                        <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="project-details">
+            <h1>Project Overview</h1>
+            <p>Pushy Plushy is cute and chaotic 2-4 player party game where players compete against each other in 10 different mini-games. Each mini-game
+                has various modifiers that changes how the game is played, making them feel different and unique every run. Players are also given tools
+                and weapons based on the mini-game to compete and earn the most points.
+            </p>
+            <div class="project-tags">
+                <span>Unreal Engine</span>
+                <span>C++</span>
+                <span>Visual Script</span>
+                <span>Team Project</span>
+            </div>
+            <dl class="project-facts">
+                <dt>Responsibilities</dt><dd>Gameplay Programming</dd>
+                <dt>Development Time</dt><dd>5 Weeks</dd>
+            </dl>
+        </div>
+    </section>
+    <section class="project-writeup">
+    <h2>What I Contributed</h2>
+        <ul>
+            <li><dt>GPU-Based Simulation</dt></li>
+            <li><dt>Customizable Simulation Parameters</dt></li>
+            <li><dt>Angle of Repose, Wind Shadow, &amp Wind Warp Calculations</dt></li>
+            <li><dt>Perlin Noise Terrain-Aware Sand Simulation</dt></li>
+            <li><dt>Height Map Texture Generation</dt></li>
+            <li><dt>Mesh Deformation via Vertex Displacement Shader</dt></li>
+            <li><dt>Debug Tools - Color Coding</dt></li>
+        </ul>
+    </section>
+    <section class="project-writeup">
+    <h2>What I Learnt</h2>
+    <d1 class="project-facts">
+        <dd>
+            Initially, this system was written in C# which had major performance issues as it had to run the cellular automata algorithm for about 
+            500K+ times per second on the CPU to produce decent results, and increasing the grid size made it impossible to run. This problem was 
+            solved by using Compute Shaders written in HLSL, which runs on the GPU to parellely process the simulation. The GPU version performed 
+            significantly better, it managed to run the algorithm accross 4M+ cells per frame and gave 200FPS which means the total amount of 
+            calculations were 800M+ (4,000,000 cells x 200 frames per second). Making this transition from C# to HLSL was quite challenging as I 
+            have limited experience with shader programming, so this was a steep learning curve. In the process of practicing PCG code 
+            beforing starting this project get a grasp of how PCG works, I made a seed-based basic solar system generator along 
+            with a perlin noise terrain mesh generator.
+        </dd>
+    </section>
+    <section class="project-writeup">
+        <h2>Documentation</h2>
+        <p>Here's a position paper I've written on this project during my university studies.</p>
+    </section>
+    <section class="project-writeup">
+        <h2>Future Work</h2>
+        <ul>
+            <li><dt>Collision Detection</dt></li>
+            <li><dt>Vegetation Generation</dt></li>
+            <li><dt>Terrain Erosion</dt></li>
+            <li><dt>Simulation Timeline Controller</dt></li>
+        </ul>
+    </section>
+</main>
+
+<footer id="contact">
+    <div class="footer-links">
+        <a href="https://github.com/haritanmaidev" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-github" aria-hidden="true"></i>
+            <span>GitHub</span>
+        </a>
+        <a href="https://www.linkedin.com/in/hari-tanmai-gandi" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+            <span>LinkedIn</span>
+        </a>
+
+        <a href="https://www.artstation.com/hacehs" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-artstation" aria-hidden="true"></i>
+            <span>ArtStation</span>
+        </a>
+        <a>
+            <i class="fa-solid fa-file-lines" aria-hidden="true"></i>
+            <span>CV</span>
+        </a>
+    </div>
+    <p>© 2026 Hari Tanmai Gandi</p>
+</footer>
+<script src="../script.js"></script>
+</body>
+
+	
+</html>
