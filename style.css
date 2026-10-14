@@ -745,6 +745,16 @@ iframe.project-media {
     line-height: 1.7;
 }
 
+.project-writeup a {
+    color: var(--text-primary);
+    text-decoration: none;
+    font: inherit;
+}
+
+.project-writeup a:hover {
+    color: var(--card-hover-outline);
+}
+
 .project-writeup > h2 {
     text-align: left;
     margin-bottom: 6px;

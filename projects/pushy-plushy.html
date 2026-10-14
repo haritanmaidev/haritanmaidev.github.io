@@ -30,14 +30,19 @@
 <main class="project-page"> 
     <section class="project-overview">
         <div class="project-gallery">
-            <img src="../images/pushyplushy1.png" alt="" class="project-media">
+            <iframe class="project-media" src="https://www.youtube.com/embed/da6-oookiA8?autoplay=1&mute=1&controls=1&playsinline=1" title="Pushy Plushy gameplay" 
+            allow="autoplay; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             <div class="gallery-sidebar">
                 <div class="gallery-controls">
                     <button class="gallery-arrow gallery-previous" type="button">
                         <i class="fa-solid fa-chevron-up" aria-hidden="true"></i>
                     </button>
                     <div class="gallery-thumbnails">
-                        <button class="gallery-thumbnail" type="button" aria-pressed="true" data-src="../images/pushyplushy1.png">
+                        <button class="gallery-thumbnail" type="button" aria-pressed="true" data-type="youtube" data-src="https://www.youtube.com/embed/da6-oookiA8?autoplay=1&mute=1&controls=1&playsinline=1">
+                            <img src="https://i.ytimg.com/vi/da6-oookiA8/hqdefault.jpg">
+                            <span>MP4</span>
+                        </button>
+                        <button class="gallery-thumbnail" type="button" aria-pressed="false" data-src="../images/pushyplushy1.png">
                             <img src="../images/pushyplushy1.png" alt="">
                             <span>IMG</span>
                         </button>
@@ -70,9 +75,11 @@
         </div>
         <div class="project-details">
             <h1>Project Overview</h1>
-            <p>Pushy Plushy is cute and chaotic 2-4 player party game where players compete against each other in 10 different mini-games. Each mini-game
-                has various modifiers that changes how the game is played, making them feel different and unique every run. Players are also given tools
-                and weapons based on the mini-game to compete and earn the most points.
+            <p>Pushy Plushy is cute and chaotic 2-4 player party game where players compete against each other in 10 different fast-paced mini-games. Each 
+                mini-game has various modifiers that changes how it's played, making them feel different and unique every run. Players are also given tools
+                and weapons based on the mini-game to earn the most points. This game had been developed as a collaborative project during my university
+                studies alongside a team of 26 members with students from various disciplines such as concept art, 3D art, animation, design, and tech. Pushy Plushy is 
+                also set to release on Steam in the future, and its demo is available for download on our itch.io and Steam pages.
             </p>
             <div class="project-tags">
                 <span>Unreal Engine</span>
@@ -89,40 +96,28 @@
     <section class="project-writeup">
     <h2>What I Contributed</h2>
         <ul>
-            <li><dt>GPU-Based Simulation</dt></li>
-            <li><dt>Customizable Simulation Parameters</dt></li>
-            <li><dt>Angle of Repose, Wind Shadow, &amp Wind Warp Calculations</dt></li>
-            <li><dt>Perlin Noise Terrain-Aware Sand Simulation</dt></li>
-            <li><dt>Height Map Texture Generation</dt></li>
-            <li><dt>Mesh Deformation via Vertex Displacement Shader</dt></li>
-            <li><dt>Debug Tools - Color Coding</dt></li>
+            <li><dt>Mini-Game: Bomb Spleef</dt></li>
+            <li><dt>Mini-Game: Hungry Plushys</dt></li>
+            <li><dt>Modifiers</dt></li>
+            <li><dt>Bug Fixing</dt></li>
         </ul>
     </section>
     <section class="project-writeup">
     <h2>What I Learnt</h2>
     <d1 class="project-facts">
         <dd>
-            Initially, this system was written in C# which had major performance issues as it had to run the cellular automata algorithm for about 
-            500K+ times per second on the CPU to produce decent results, and increasing the grid size made it impossible to run. This problem was 
-            solved by using Compute Shaders written in HLSL, which runs on the GPU to parellely process the simulation. The GPU version performed 
-            significantly better, it managed to run the algorithm accross 4M+ cells per frame and gave 200FPS which means the total amount of 
-            calculations were 800M+ (4,000,000 cells x 200 frames per second). Making this transition from C# to HLSL was quite challenging as I 
-            have limited experience with shader programming, so this was a steep learning curve. In the process of practicing PCG code 
-            beforing starting this project get a grasp of how PCG works, I made a seed-based basic solar system generator along 
-            with a perlin noise terrain mesh generator.
+            I was a member of the tech team and was responsible for working closely with designers to implement the gameplay mechanics. I worked on making 2 mini-games and shared the 
+            responsibility of implementing the modifiers system with a designer. Working on the modifiers required me to make changes to most of the mini-game which meant understanding new code 
+            written by other tech members to ensure my changes don't break the game, along with managing GitHub to ensure there are no merge conflicts. Addtionally, a lot of each tech team 
+            member's code was being refactored due to playtesting feedback, which made it twice as hard to work on the modifiers. Through this process I became very comfortable with 
+            most of our codebase and Unreal systems such as game modes, dictionaries, gameplay tag manager, controllers, level blueprints, and input maps.
         </dd>
     </section>
     <section class="project-writeup">
-        <h2>Documentation</h2>
-        <p>Here's a position paper I've written on this project during my university studies.</p>
-    </section>
-    <section class="project-writeup">
-        <h2>Future Work</h2>
+        <h2>Links</h2>
         <ul>
-            <li><dt>Collision Detection</dt></li>
-            <li><dt>Vegetation Generation</dt></li>
-            <li><dt>Terrain Erosion</dt></li>
-            <li><dt>Simulation Timeline Controller</dt></li>
+            <li><a href="https://thinkingbrickstudios.itch.io/pushy-plushy" target="_blank" rel="noopener noreferrer">Itch.io</a></li>
+            <li><a href="https://store.steampowered.com/app/4365120/Pushy_Plushy/" target="_blank" rel="noopener noreferrer">Steam</a></li>
         </ul>
     </section>
 </main>
