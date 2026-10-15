@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name= "viewport" content= "width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
+    <title>MiniDoc - Medic Simulator | Hari's Portfolio</title>
+</head>
+
+	
+<body>
+<header>
+    <span class="site-title">Hari's Portfolio&nbsp;&nbsp; | &nbsp;&nbsp;MiniDoc - Medic Simulator</span>
+    <button class="menu-toggle" type="button" aria-label="Navigation Menu"
+     aria-expanded="false" aria-controls="main-nav">
+     <span aria-hidden="true"></span>
+     <span aria-hidden="true"></span>
+     <span aria-hidden="true"></span>
+    </button>
+    <nav id="main-nav">
+        <a class="back-link" href="../index.html#projects">Home</a>
+        <a href="#contact">Contact Me</a>
+    </nav>
+</header>
+
+<main class="project-page"> 
+    <section class="project-overview">
+        <div class="project-gallery">
+            <iframe class="project-media" src="https://www.youtube.com/embed/A9w23GyvfUs?autoplay=1&mute=1&controls=1&playsinline=1" title="MiniDoc gameplay" 
+            allow="autoplay; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <div class="gallery-sidebar">
+                <div class="gallery-controls">
+                    <button class="gallery-arrow gallery-previous" type="button" aria-label="Scroll to earlier thumbnails">
+                        <i class="fa-solid fa-chevron-up" aria-hidden="true"></i>
+                    </button>
+                    <div class="gallery-thumbnails">
+                        <button class="gallery-thumbnail" type="button" aria-pressed="true" data-type="youtube" data-src="https://www.youtube.com/embed/A9w23GyvfUs?autoplay=1&mute=1&controls=1&playsinline=1">
+                            <img src="https://i.ytimg.com/vi/A9w23GyvfUs/hqdefault.jpg">
+                            <span>MP4</span>
+                        </button>
+                        <button class="gallery-thumbnail" type="button" aria-pressed="false" data-src="../images/hosebrosfirespread3.gif">
+                            <img src="../images/hosebrosfirespread3-thumb.png" alt="thumbnail">
+                            <span>GIF</span>
+                        </button>
+                        <button class="gallery-thumbnail" type="button" aria-pressed="false" data-src="../images/hosebrosflowchart.png">
+                            <img src="../images/hosebrosflowchart.png" alt="thumbnail">
+                            <span>IMG</span>
+                        </button>
+                    </div>
+                    <button class="gallery-arrow gallery-next" type="button" aria-label="Scroll to later thumbnails">
+                        <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="project-details">
+            <h1>Project Overview</h1>
+            <p> This is an educational game where the player must appropriately treat and manage various patients with varying conditions.
+                The game teachs the player about the generic names of widely used medicine, how blood transfusion works, and CPR through a mini-rhythm-game.  
+                All the relevant learning materials can be found during gameplay, constantly letting the player correct their mistakes. 
+            </p>
+            <div class="project-tags">
+                <span>Unity</span>
+                <span>C#</span>
+                <span>UI</span>
+            </div>
+            <dl class="project-facts">
+                <dt>Responsibilities</dt><dd>Gameplay Programming, UI Programming</dd>
+                <dt>Development Time</dt><dd>4 Weeks</dd>
+            </dl>
+        </div>
+    </section>
+    <section class="project-writeup">
+    <h2>Systems & Features</h2>
+        <ul>
+            <li><dt>Patient Types: Med, Blood, CPR</dt></li>
+            <li><dt>Patient Details Randomizer</dt></li>
+            <li><dt>UI Document for Patient Reports</dt></li>
+            <li><dt>Non-Diegetic & Spatial UI for interactions</dt></li>
+            <li><dt>Object Pooled Patient Spawner</dt></li>
+            <li><dt>Blood Transfusion Solver</dt></li>
+            <li><dt>Items & Item Storage Shelfs</dt></li>
+            <li><dt>Points System</dt></li>
+        </ul>
+    </section>
+    <section class="project-writeup">
+    <h2>What I Learnt</h2>
+    <d1 class="project-facts">
+        <dd>
+            Working on the above mentioned systems helped improve my coding skills such as practicing better structure and readability in code. Additionally,
+            I've never worked on a modular item storage system before so thats one more thing I'm now familiar with. The only tedious bit was making the 
+            CPR mini-game which took a lot of time to try different camera angles and different approaches for this rhythm game.
+        </dd>
+    </section>
+        <section class="project-writeup">
+        <h2>Documentation</h2>
+        <p>Here's an essay I've written on this project which talks about the use cases of serious games in the medical field.</p>
+    </section>
+    <section class="project-writeup">
+        <h2>Future Work</h2>
+        <ul>
+            <li><dt>Wound Types + Treatments</dt></li>
+            <li><dt>Item Stock Management</dt></li>
+            <li><dt>Item Expiry</dt></li>
+            <li><dt>Mood Timers for Patients</dt></li>
+            <li><dt>Hospital Cleaning & Sanitation</dt></li>
+        </ul>
+    </section>
+</main>
+
+<footer id="contact">
+    <div class="footer-links">
+        <a href="https://github.com/haritanmaidev" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-github" aria-hidden="true"></i>
+            <span>GitHub</span>
+        </a>
+        <a href="https://www.linkedin.com/in/hari-tanmai-gandi" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+            <span>LinkedIn</span>
+        </a>
+
+        <a href="https://www.artstation.com/hacehs" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-artstation" aria-hidden="true"></i>
+            <span>ArtStation</span>
+        </a>
+        <a>
+            <i class="fa-solid fa-file-lines" aria-hidden="true"></i>
+            <span>CV</span>
+        </a>
+    </div>
+    <p>© 2026 Hari Tanmai Gandi</p>
+</footer>
+<script src="../script.js"></script>
+</body>
+
+	
+</html>
