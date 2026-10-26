@@ -38,16 +38,16 @@
                         <i class="fa-solid fa-chevron-up" aria-hidden="true"></i>
                     </button>
                     <div class="gallery-thumbnails">
-                        <button class="gallery-thumbnail" type="button" aria-pressed="true" data-type="youtube" data-src="https://www.youtube.com/embed/A9w23GyvfUs?autoplay=1&mute=1&controls=1&playsinline=1">
-                            <img src="https://i.ytimg.com/vi/A9w23GyvfUs/hqdefault.jpg">
+                        <button class="gallery-thumbnail" type="button" aria-pressed="true" data-type="youtube" data-src="https://www.youtube.com/watch?v=kQSZH3DquMM">
+                            <img src="https://i.ytimg.com/vi/kQSZH3DquMM/hqdefault.jpg">
                             <span>MP4</span>
                         </button>
                         <button class="gallery-thumbnail" type="button" aria-pressed="false" data-src="../images/hosebrosfirespread3.gif">
                             <img src="../images/hosebrosfirespread3-thumb.png">
                             <span>GIF</span>
                         </button>
-                        <button class="gallery-thumbnail" type="button" aria-pressed="false" data-src="../images/hosebrosflowchart.png">
-                            <img src="../images/hosebrosflowchart.png">
+                        <button class="gallery-thumbnail" type="button" aria-pressed="false" data-src="../images/robotron1.png">
+                            <img src="../images/robotron1.png">
                             <span>IMG</span>
                         </button>
                     </div>
@@ -59,39 +59,56 @@
         </div>
         <div class="project-details">
             <h1>Project Overview</h1>
-            <p>This project explores Physically Based Rendering with Cook-Torrance Reflectance Model along with cubemap-based image lighting and ImGui controls
-                for adjusting material properties.
+            <p>This is a remake of the classic arcade game Robotron: 2082, a fast paced 2D top-down roguelike released in early 1980s. The aim 
+                is to defeat endless waves of robots, rescue humans, and earn as many points as you can. 
             </p>
             <div class="project-tags">
                 <span>C++</span>
                 <span>SFML</span>
             </div>
             <dl class="project-facts">
-                <dt>Responsibilities</dt><dd>Engine Programming, Gameplay Programming, UI Programming, AI Programming, Low-Level Programming</dd>
+                <dt>Responsibilities</dt><dd>Gameplay Programming, Game Systems Programming, UI Programming, AI Programming, Low-Level Programming</dd>
                 <dt>Development Time</dt><dd>5 Weeks</dd>
+                <dt>Grade</dt><dd>First Class</dd>
             </dl>
         </div>
     </section>
     <section class="project-writeup">
     <h2>Systems & Features</h2>
         <ul>
-            <li><dt>Game Object Hierarchy</dt></li>
-            <li><dt>Collision Detection</dt></li>
-            <li><dt>7 Character Classes</dt></li>
-            <li><dt>5 Projectile Classes</dt></li>
-            <li><dt>Wave System</dt></li>
-            <li><dt>Audio Manager</dt></li>
+            <li><dt>SFML Setup</dt></li>
+            <li><dt>Input System</dt></li>
+            <li><dt>Custom Collision Detection</dt></li>
+            <li><dt>Game Loop Manager</dt></li>
             <li><dt>Custom Scene Manager</dt></li>
+            <li><dt>Game Object Base Class</dt></li>
+            <li><dt>9 Character Classes</dt></li>
+            <li><dt>5 Projectile Classes</dt></li>
+            <li><dt>Entity Manager</dt></li>
+            <li><dt>Wave System & Wave Difficulty Scaling System</dt></li>
+            <li><dt>Points System</dt></li>
+            <li><dt>Audio Manager</dt></li>
+            <li><dt>UI - Main Menu, Pause, Gameplay</dt></li>
+            <li><dt>Modern C++: Smart *, std::optional, const&, override, Member Init Lists</dt></li>
         </ul>
     </section>
     <section class="project-writeup">
     <h2>What I Learnt</h2>
     <d1 class="project-facts">
         <dd>
-            Implementing the above mentioned aspects in HLSL helped me gain familiarity with graphics pipeline and a better understanding of how 
-            Fresnel, surface roughness, and microfacet geometry influence the appearance of material. More importantly, I became comfortable
-            with the idea of experimenting and exploring further into graphics programming and DX11.
+            Coding all of these systems from scratch really gave me a better understanding of how various systems are tied together on the backend
+            and highlighted many areas where I can optimise my code and improve its readability. I also got a lot more experience with inheritance,
+            polymorphism, and working with pointers while setting up the entity manager. 
         </dd>
+    </section>
+
+     <section class="project-writeup">
+        <h2>Future Work</h2>
+        <ul>
+            <li><dt>Quad Tree for Collisions</dt></li>
+            <li><dt>Player Upgrades</dt></li>
+            <li><dt>Bigger Map</dt></li>
+        </ul>
     </section>
 </main>
 
@@ -105,7 +122,6 @@
             <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
             <span>LinkedIn</span>
         </a>
-
         <a href="https://www.artstation.com/hacehs" target="_blank" rel="noopener noreferrer">
             <i class="fa-brands fa-artstation" aria-hidden="true"></i>
             <span>ArtStation</span>

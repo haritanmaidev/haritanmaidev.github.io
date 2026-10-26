@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name= "viewport" content= "width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
+    <title>Robotron 2025 | Hari's Portfolio</title>
+</head>
+
+	
+<body>
+<header>
+    <span class="site-title">Hari's Portfolio&nbsp;&nbsp; | &nbsp;&nbsp;Robotron 2025</span>
+    <button class="menu-toggle" type="button" aria-label="Navigation Menu"
+     aria-expanded="false" aria-controls="main-nav">
+     <span aria-hidden="true"></span>
+     <span aria-hidden="true"></span>
+     <span aria-hidden="true"></span>
+    </button>
+    <nav id="main-nav">
+        <a class="back-link" href="../index.html#projects">Home</a>
+        <a href="#contact">Contact Me</a>
+    </nav>
+</header>
+
+<main class="project-page"> 
+    <section class="project-overview">
+        <div class="project-gallery">
+            <iframe class="project-media" src="https://www.youtube.com/embed/A9w23GyvfUs?autoplay=1&mute=1&controls=1&playsinline=1" title="MiniDoc gameplay" 
+            allow="autoplay; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <div class="gallery-sidebar">
+                <div class="gallery-controls">
+                    <button class="gallery-arrow gallery-previous" type="button" aria-label="Scroll to earlier thumbnails">
+                        <i class="fa-solid fa-chevron-up" aria-hidden="true"></i>
+                    </button>
+                    <div class="gallery-thumbnails">
+                        <button class="gallery-thumbnail" type="button" aria-pressed="true" data-type="youtube" data-src="https://www.youtube.com/watch?v=kQSZH3DquMM">
+                            <img src="https://i.ytimg.com/vi/kQSZH3DquMM/hqdefault.jpg">
+                            <span>MP4</span>
+                        </button>
+                        <button class="gallery-thumbnail" type="button" aria-pressed="false" data-src="../images/hosebrosfirespread3.gif">
+                            <img src="../images/hosebrosfirespread3-thumb.png">
+                            <span>GIF</span>
+                        </button>
+                        <button class="gallery-thumbnail" type="button" aria-pressed="false" data-src="../images/robotron1.png">
+                            <img src="../images/robotron1.png">
+                            <span>IMG</span>
+                        </button>
+                    </div>
+                    <button class="gallery-arrow gallery-next" type="button" aria-label="Scroll to later thumbnails">
+                        <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="project-details">
+            <h1>Project Overview</h1>
+            <p>This is a remake of the classic arcade game Robotron: 2082, a fast paced 2D top-down roguelike released in early 1980s. The aim 
+                is to defeat endless waves of robots, rescue humans, and earn as many points as you can. 
+            </p>
+            <div class="project-tags">
+                <span>C++</span>
+                <span>SFML</span>
+            </div>
+            <dl class="project-facts">
+                <dt>Responsibilities</dt><dd>Gameplay Programming, Game Systems Programming, UI Programming, AI Programming, Low-Level Programming</dd>
+                <dt>Development Time</dt><dd>5 Weeks</dd>
+                <dt>Grade</dt><dd>First Class</dd>
+            </dl>
+        </div>
+    </section>
+    <section class="project-writeup">
+    <h2>Systems & Features</h2>
+        <ul>
+            <li><dt>SFML Setup</dt></li>
+            <li><dt>Input System</dt></li>
+            <li><dt>Custom Collision Detection</dt></li>
+            <li><dt>Game Loop Manager</dt></li>
+            <li><dt>Custom Scene Manager</dt></li>
+            <li><dt>Game Object Base Class</dt></li>
+            <li><dt>9 Character Classes</dt></li>
+            <li><dt>5 Projectile Classes</dt></li>
+            <li><dt>Entity Manager</dt></li>
+            <li><dt>Wave System & Wave Difficulty Scaling System</dt></li>
+            <li><dt>Points System</dt></li>
+            <li><dt>Audio Manager</dt></li>
+            <li><dt>UI - Main Menu, Pause, Gameplay</dt></li>
+            <li><dt>Modern C++: Smart *, std::optional, const&, override, Member Init Lists</dt></li>
+        </ul>
+    </section>
+    <section class="project-writeup">
+    <h2>What I Learnt</h2>
+    <d1 class="project-facts">
+        <dd>
+            Coding all of these systems from scratch really gave me a better understanding of how various systems are tied together on the backend
+            and highlighted many areas where I can optimise my code and improve its readability. I also got a lot more experience with inheritance,
+            polymorphism, and working with pointers while setting up the entity manager. 
+        </dd>
+    </section>
+
+     <section class="project-writeup">
+        <h2>Future Work</h2>
+        <ul>
+            <li><dt>Quad Tree for Collisions</dt></li>
+            <li><dt>Player Upgrades</dt></li>
+            <li><dt>Bigger Map</dt></li>
+        </ul>
+    </section>
+</main>
+
+<footer id="contact">
+    <div class="footer-links">
+        <a href="https://github.com/haritanmaidev" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-github" aria-hidden="true"></i>
+            <span>GitHub</span>
+        </a>
+        <a href="https://www.linkedin.com/in/hari-tanmai-gandi" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+            <span>LinkedIn</span>
+        </a>
+        <a href="https://www.artstation.com/hacehs" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-artstation" aria-hidden="true"></i>
+            <span>ArtStation</span>
+        </a>
+        <a>
+            <i class="fa-solid fa-file-lines" aria-hidden="true"></i>
+            <span>CV</span>
+        </a>
+    </div>
+    <p>© 2026 Hari Tanmai Gandi</p>
+</footer>
+<script src="../script.js"></script>
+</body>
+</html>
