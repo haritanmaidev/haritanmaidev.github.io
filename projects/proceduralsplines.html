@@ -99,7 +99,11 @@
         </div>
         <div class="project-details">
             <h1>Project Overview</h1>
-            <p>This project explores proceduralizing Catmull-Rom and Bezier Splines in Unity 
+            <p>This project explores a procedural spline tool within Unity through two implementations. The first is a custom Catmull-Rom Spline tool
+                that allows easy manipulation of splines to form complex paths through collision-based deformation, control handles, and adjustable 
+                parameters such as curvature control, segment point offsets, segment resolution, closed-loop splines, and Perlin noise. The second  
+                focuses on procedural mesh generation along both Catmull-Rom and Bézier splines, with extended functionality of mesh 
+                generation along Bézier splines, to generate a roller coaster-style geometry.
             </p>
             <div class="project-tags">
                 <span>Unity</span>
@@ -116,36 +120,22 @@
     <section class="project-writeup">
     <h2>Systems & Features</h2>
         <ul>
-            <li><dt>Catmull-Rom Procedural Splines</dt></li>
-            <li><dt>Bezier Curve Spline Mesh Generation</dt></li>
-            <li><dt>Spline Collision Detection</dt></li>
-            <li><dt>Procedural Spline Point Adjustment</dt></li>
-            <li><dt>Spline Point Offsets: Spiral, Curve, Noise</dt></li>
+            <li><dt>Collision-Based Spline Deformation</dt></li>
+            <li><dt>Modification Parameters: Offsets, Curvatures, Resolution</dt></li>
             <li><dt>Offset Weight Control</dt></li>
-            <li><dt>Spline Handles & Connection</dt></li>
-            <li><dt>Spline Resolution Control</dt></li>
+            <li><dt>Handles & Looped Connections</dt></li>
             <li><dt>Spline Mesh Generation</dt></li>
-            <li><dt>L Systems from Spline Points</dt></li>
-            <li><dt>Coroutines</dt></li>
+            <li><dt>L Systems from Spline</dt></li>
+            <li><dt>Animating Objects along a Spline</dt></li>
         </ul>
     </section>
     <section class="project-writeup">
-    <h2>What I Learnt</h2>
+    <h2>Challenges</h2>
     <d1 class="project-facts">
         <dd>
-            Coding all of these systems from scratch really gave me a better understanding of how various systems are tied together on the backend
-            and highlighted many areas where I can optimise my code and improve its readability. I also got a lot more experience with inheritance,
-            polymorphism, and working with pointers while setting up the entity manager. 
+            The biggest learning curves were understanding of how splines can be created, modified, and interpolated, as well as how to index and position
+            vertices that form triangle meshes of the desired shape along the spline.
         </dd>
-    </section>
-
-     <section class="project-writeup">
-        <h2>Future Work</h2>
-        <ul>
-            <li><dt>Quad Tree for Collisions</dt></li>
-            <li><dt>Player Upgrades</dt></li>
-            <li><dt>Bigger Map</dt></li>
-        </ul>
     </section>
 </main>
 
