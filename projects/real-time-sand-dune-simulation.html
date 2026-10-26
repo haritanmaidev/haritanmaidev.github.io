@@ -49,10 +49,6 @@
                             <img src="../images/sandsimulation3-thumb.png" alt="">
                             <span>GIF</span>
                         </button>
-                        <button class="gallery-thumbnail" type="button" aria-label="Show simulation image" aria-pressed="false" data-src="../images/sandsimulation1.png">
-                            <img src="../images/sandsimulation1.png" alt="">
-                            <span>IMG</span>
-                        </button>
                         <button class="gallery-thumbnail" type="button" aria-label="Show simulation image 2" aria-pressed="false" data-src="../images/sandsimulation2.png">
                             <img src="../images/sandsimulation2.png">
                             <span>IMG</span>
@@ -65,6 +61,50 @@
                             <img src="../images/sandsimulation4.png">
                             <span>IMG</span>
                         </button>
+                        <button class="gallery-thumbnail" type="button" aria-label="Show simulation image 4" aria-pressed="false" data-src="../images/sandsimulation6.png">
+                            <img src="../images/sandsimulation6.png">
+                            <span>IMG</span>
+                        </button>
+                        <button class="gallery-thumbnail" type="button" aria-label="Show simulation image 4" aria-pressed="false" data-src="../images/sandsimulation9.png">
+                            <img src="../images/sandsimulation7.png">
+                            <span>IMG</span>
+                        </button>
+                        <button class="gallery-thumbnail" type="button" aria-label="Show simulation image 4" aria-pressed="false" data-src="../images/sandsimulation8.png">
+                            <img src="../images/sandsimulation8.png">
+                            <span>IMG</span>
+                        </button>
+                        <button class="gallery-thumbnail" type="button" aria-label="Show simulation image 4" aria-pressed="false" data-src="../images/sandsimulation9.png">
+                            <img src="../images/sandsimulation9.png">
+                            <span>IMG</span>
+                        </button>
+                        <button class="gallery-thumbnail" type="button" aria-label="Show simulation image 4" aria-pressed="false" data-src="../images/sandsimulation10.png">
+                            <img src="../images/sandsimulation10.png">
+                            <span>IMG</span>
+                        </button>
+                        <button class="gallery-thumbnail" type="button" aria-label="Show simulation image 4" aria-pressed="false" data-src="../images/sandsimulation11.png">
+                            <img src="../images/sandsimulation11.png">
+                            <span>IMG</span>
+                        </button>
+                        <button class="gallery-thumbnail" type="button" aria-label="Show simulation image 4" aria-pressed="false" data-src="../images/sandsimulation12.png">
+                            <img src="../images/sandsimulation12.png">
+                            <span>IMG</span>
+                        </button>
+                        <button class="gallery-thumbnail" type="button" aria-label="Show simulation image 4" aria-pressed="false" data-src="../images/sandsimulation13.png">
+                            <img src="../images/sandsimulation13.png">
+                            <span>IMG</span>
+                        </button>
+                        <button class="gallery-thumbnail" type="button" aria-label="Show simulation image 4" aria-pressed="false" data-src="../images/sandsimulationflowchart.png">
+                            <img src="../images/sandsimulationflowchart.png">
+                            <span>IMG</span>
+                        </button>
+                        <button class="gallery-thumbnail" type="button" aria-label="Show simulation image" aria-pressed="false" data-src="../images/sandsimulation1.png">
+                            <img src="../images/sandsimulation1.png" alt="">
+                            <span>IMG</span>
+                        </button>
+                        <button class="gallery-thumbnail" type="button" aria-label="Show simulation image 4" aria-pressed="false" data-src="../images/sandsimulation5.png">
+                            <img src="../images/sandsimulation5.png">
+                            <span>IMG</span>
+                        </button>
                     </div>
                     <button class="gallery-arrow gallery-next" type="button" aria-label="Scroll to later thumbnails">
                         <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
@@ -74,8 +114,8 @@
         </div>
         <div class="project-details">
             <h1>Project Overview</h1>
-            <p>This is a GPU-based model of a cellular automata algorithm where dunes procedurally emerge on a grid, based on rules 
-            such as wind-driven sand saltation, probabilistic deposition, wind-shadow zones, wind warping, avalanching, and terrain. 
+            <p>This is a GPU-based model of a cellular automata algorithm where dunes procedurally emerge on a 2D grid, based on rules 
+            such as wind-driven sand saltation, probabilistic deposition, wind-shadow zones, wind warping, avalanching, and base terrain. 
             The grid is represented by a 2D integer array where each cell stores the height value of sand deposited onto it,
             forming a heightmap.<br>This data is mapped to a texture where colours are assigned based on the height value of each cell
             and is later rendered as a 3D mesh using vertex displacement. This system can also be layered upon other grids representing different 
@@ -101,6 +141,7 @@
             <li><dt>GPU-Based Simulation</dt></li>
             <li><dt>Customizable Simulation Parameters</dt></li>
             <li><dt>Angle of Repose, Wind Shadow, &amp Wind Warp Calculations</dt></li>
+            <li><dt>Periodic Boundary Calculation</dt></li>
             <li><dt>Perlin Noise Terrain-Aware Sand Simulation</dt></li>
             <li><dt>Height Map Texture Generation</dt></li>
             <li><dt>Mesh Deformation via Vertex Displacement Shader</dt></li>
@@ -130,7 +171,7 @@
         <ul>
             <li><dt>Collision Detection</dt></li>
             <li><dt>Vegetation Generation</dt></li>
-            <li><dt>Terrain Erosion</dt></li>
+            <li><dt>Base Terrain Erosion</dt></li>
             <li><dt>Simulation Timeline Controller</dt></li>
             <li><dt>Optimisation: Triangle Strips, Batching, Sinking</dt></li>
         </ul>
