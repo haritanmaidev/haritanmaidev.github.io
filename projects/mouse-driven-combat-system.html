@@ -30,19 +30,48 @@
 <main class="project-page"> 
     <section class="project-overview">
         <div class="project-gallery">
-            <img src="../images/sandsimulation1.gif" alt="" class="project-media">
+            <iframe class="project-media" src="https://www.youtube.com/embed/XJgj7n9poRc?autoplay=1&mute=1&controls=1&playsinline=1" title="MDCS gameplay" 
+            allow="autoplay; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             <div class="gallery-sidebar">
                 <div class="gallery-controls">
                     <button class="gallery-arrow gallery-previous" type="button" aria-label="Scroll to earlier thumbnails">
                         <i class="fa-solid fa-chevron-up" aria-hidden="true"></i>
                     </button>
                     <div class="gallery-thumbnails">
-                        <button class="gallery-thumbnail" type="button" aria-label="Show simulation GIF 1" aria-pressed="true" data-src="../images/sandsimulation1.gif">
-                            <img src="../images/sandsimulation1-thumb.png" alt="">
+                        <button class="gallery-thumbnail" type="button" aria-pressed="true" data-type="youtube" data-src="https://www.youtube.com/embed/XJgj7n9poRc?autoplay=1&mute=1&controls=1&playsinline=1">
+                            <img src="https://i.ytimg.com/vi/XJgj7n9poRc/hqdefault.jpg">
+                            <span>YT</span>
+                        </button>
+                        <button class="gallery-thumbnail" type="button" aria-label="Show simulation GIF 1" aria-pressed="false" data-src="../images/mdcsattack.gif">
+                            <img src="../images/mdcsattack-thumb.png" alt="">
                             <span>GIF</span>
                         </button>
-                        <button class="gallery-thumbnail" type="button" aria-label="Show simulation image" aria-pressed="false" data-src="../images/sandsimulation1.png">
-                            <img src="../images/sandsimulation1.png" alt="">
+                        <button class="gallery-thumbnail" type="button" aria-label="Show simulation GIF 1" aria-pressed="false" data-src="../images/mdcsenemyai.gif">
+                            <img src="../images/mdcsenemyai-thumb.png" alt="">
+                            <span>GIF</span>
+                        </button>
+                        <button class="gallery-thumbnail" type="button" aria-label="Show simulation GIF 1" aria-pressed="false" data-src="../images/mdcsproceduralanim.gif">
+                            <img src="../images/mdcsproceduralanim-thumb.png" alt="">
+                            <span>GIF</span>
+                        </button>
+                        <button class="gallery-thumbnail" type="button" aria-label="Show simulation image" aria-pressed="false" data-src="../images/mdcs1.png">
+                            <img src="../images/mdcs1.png" alt="">
+                            <span>IMG</span>
+                        </button>
+                        <button class="gallery-thumbnail" type="button" aria-label="Show simulation image" aria-pressed="false" data-src="../images/mdcs2.png">
+                            <img src="../images/mdcs2.png" alt="">
+                            <span>IMG</span>
+                        </button>
+                        <button class="gallery-thumbnail" type="button" aria-label="Show simulation image" aria-pressed="false" data-src="../images/mdcs3.png">
+                            <img src="../images/mdcs3.png" alt="">
+                            <span>IMG</span>
+                        </button>
+                        <button class="gallery-thumbnail" type="button" aria-label="Show simulation image" aria-pressed="false" data-src="../images/mdcs4.png">
+                            <img src="../images/mdcs4.png" alt="">
+                            <span>IMG</span>
+                        </button>
+                        <button class="gallery-thumbnail" type="button" aria-label="Show simulation image" aria-pressed="false" data-src="../images/mdcs5.png">
+                            <img src="../images/mdcs5.png" alt="">
                             <span>IMG</span>
                         </button>
                     </div>
@@ -90,6 +119,7 @@
             <li><dt>Health Component System</dt></li>
             <li><dt>Enemy AI</dt></li>
             <li><dt>Combat Feedback Mechanics</dt></li>
+            <li><dt>Custom Camera</dt></li>
             <li><dt>Coroutines</dt></li>
         </ul>
     </section>
