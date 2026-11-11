@@ -970,6 +970,10 @@ iframe.project-media {
     border-radius: 10px;
 }
 
+.document-viewer + .document-viewer {
+    margin-top: 1em;
+}
+
 .document-viewer iframe {
     display: block;
     width: 100%;
